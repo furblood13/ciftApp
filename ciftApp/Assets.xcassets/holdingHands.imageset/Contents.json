@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Adobe Express - file.png",
+      "filename" : "baris.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Adobe Express - file 1.png",
+      "filename" : "baris 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Adobe Express - file 2.png",
+      "filename" : "baris 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
