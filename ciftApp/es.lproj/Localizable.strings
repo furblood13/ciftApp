@@ -1,0 +1,334 @@
+/* 
+  Localizable.strings (Spanish)
+  ciftApp
+  
+  Us & Time - Relationship OS
+*/
+
+// MARK: - Common
+"common.cancel" = "Cancelar";
+"common.save" = "Guardar";
+"common.delete" = "Eliminar";
+"common.edit" = "Editar";
+"common.done" = "Listo";
+"common.add" = "Añadir";
+"common.refresh" = "Actualizar";
+"common.loading" = "Cargando...";
+"common.error" = "Error";
+"common.success" = "Éxito";
+"common.confirm" = "Confirmar";
+"common.yes" = "Sí";
+"common.no" = "No";
+"common.ok" = "OK";
+"common.back" = "Atrás";
+"common.next" = "Siguiente";
+"common.skip" = "Omitir";
+"common.share" = "Compartir";
+"common.close" = "Cerrar";
+
+// MARK: - App
+"app.name" = "Us & Time";
+"app.tagline" = "La historia de tu relación";
+
+// MARK: - Home
+"home.title" = "Us & Time";
+"home.together" = "Juntos";
+"home.days" = "días";
+"home.yourMood" = "Tu Estado";
+"home.timeline" = "Línea de Tiempo";
+"home.timeline.subtitle" = "Recuerdos y eventos";
+"home.location" = "Ubicación";
+"home.location.subtitle" = "¿Dónde está tu pareja?";
+"home.capsule" = "Cápsula del Tiempo";
+"home.capsule.subtitle" = "Mensajes para el futuro";
+"home.todo" = "Tareas";
+"home.todo.subtitle" = "Tareas compartidas";
+"home.gift" = "Regalo";
+"home.gift.subtitle" = "Ideas de regalos sorpresa";
+"home.dayMessage.new" = "¡Un nuevo comienzo! 🌱";
+"home.dayMessage.good" = "¡Va muy bien! 💕";
+"home.dayMessage.wonderful" = "¡Maravilloso viaje! ✨";
+"home.dayMessage.year" = "¡Pasó un año! 🎉";
+"home.dayMessage.legend" = "¡Pareja legendaria! 👑";
+
+// MARK: - Auth
+"auth.title" = "Us & Time";
+"auth.subtitle" = "Sistema de Relación";
+"auth.email" = "Correo electrónico";
+"auth.password" = "Contraseña";
+"auth.login" = "Iniciar Sesión";
+"auth.signup" = "Registrarse";
+"auth.noAccount" = "¿No tienes cuenta?";
+"auth.hasAccount" = "¿Ya tienes cuenta?";
+"auth.forgotPassword" = "¿Olvidaste tu contraseña?";
+"auth.magicLink" = "Iniciar con enlace mágico";
+"auth.checkEmail" = "Revisa tu correo para el enlace de acceso";
+
+// MARK: - Pairing
+"pairing.title" = "Conectar con Pareja";
+"pairing.subtitle" = "Comparte tu código o ingresa el de tu pareja";
+"pairing.yourCode" = "Tu Código";
+"pairing.enterCode" = "Ingresa el Código de tu Pareja";
+"pairing.connect" = "Conectar";
+"pairing.copied" = "¡Código copiado!";
+"pairing.waiting" = "Esperando a tu pareja...";
+"pairing.success" = "¡Conectado exitosamente!";
+"pairing.error" = "Error de conexión";
+"pairing.invalidCode" = "Código inválido";
+"pairing.generateNew" = "Generar Nuevo Código";
+
+// MARK: - Timeline
+"timeline.title" = "Línea de Tiempo";
+"timeline.empty.title" = "Aún no hay historias";
+"timeline.empty.subtitle" = "Comienza añadiendo tu primer recuerdo";
+"timeline.filter.all" = "Todo";
+"timeline.filter.memory" = "Recuerdo";
+"timeline.filter.conflict" = "Conflicto";
+"timeline.filter.milestone" = "Hito";
+"timeline.stats" = "Estadísticas";
+"timeline.milestones" = "Hitos";
+"timeline.gallery" = "Galería";
+"timeline.addEvent" = "Añadir Evento";
+
+// MARK: - Add Event
+"addEvent.title" = "Nuevo Evento";
+"addEvent.selectType" = "Selecciona tipo de evento";
+"addEvent.memory" = "Recuerdo";
+"addEvent.memory.subtitle" = "Un momento hermoso";
+"addEvent.conflict" = "Conflicto";
+"addEvent.conflict.subtitle" = "Un desacuerdo";
+"addEvent.milestone" = "Hito";
+"addEvent.milestone.subtitle" = "Un logro especial";
+"addEvent.eventTitle" = "Título";
+"addEvent.eventTitle.placeholder" = "¿Qué pasó?";
+"addEvent.description" = "Descripción";
+"addEvent.description.placeholder" = "Cuenta la historia...";
+"addEvent.date" = "Fecha";
+"addEvent.photos" = "Fotos";
+"addEvent.addPhoto" = "Añadir Foto";
+"addEvent.category" = "Categoría";
+"addEvent.severity" = "Severidad";
+"addEvent.whoStarted" = "¿Quién Empezó?";
+"addEvent.me" = "Yo";
+"addEvent.partner" = "Pareja";
+"addEvent.both" = "Ambos";
+"addEvent.create" = "Crear Evento";
+
+// MARK: - Event Detail
+"eventDetail.delete" = "Eliminar";
+"eventDetail.deleteConfirm" = "¿Estás seguro de que quieres eliminar este evento?";
+"eventDetail.startedBy" = "Iniciado por:";
+"eventDetail.category" = "Categoría:";
+"eventDetail.severity" = "Severidad:";
+"eventDetail.lessonLearned" = "Lección Aprendida:";
+"eventDetail.resolved" = "Resuelto";
+"eventDetail.resolve" = "Nos Reconciliamos / Resolvimos";
+"eventDetail.resolveTitle" = "Lección Aprendida";
+"eventDetail.resolveMessage" = "¿Qué aprendieron? (Opcional)";
+"eventDetail.resolvePlaceholder" = "Aprendimos que...";
+"eventDetail.resolveSuccess" = "¡Genial! Me alegra que lo resolvieron. ❤️";
+"eventDetail.saveResolve" = "Guardar y Hacer las Paces";
+
+// MARK: - Conflict Categories
+"conflict.food" = "Comida";
+"conflict.jealousy" = "Celos";
+"conflict.finance" = "Finanzas";
+"conflict.chores" = "Tareas del Hogar";
+"conflict.communication" = "Comunicación";
+"conflict.family" = "Familia";
+"conflict.time" = "Tiempo/Atención";
+"conflict.other" = "Otro";
+
+// MARK: - Event Detail
+"eventDetail.title" = "Detalles";
+
+// MARK: - Stats
+"stats.title" = "Estadísticas";
+"stats.totalEvents" = "Total de Eventos";
+"stats.memories" = "Recuerdos";
+"stats.conflicts" = "Conflictos";
+"stats.milestones" = "Hitos";
+"stats.resolvedConflicts" = "Conflictos Resueltos";
+"stats.avgSeverity" = "Severidad Promedio";
+"stats.mostCommonCategory" = "Categoría Más Común";
+"stats.trend" = "Tendencia";
+"stats.period.month" = "Mes";
+"stats.period.year" = "Año";
+"stats.period.all" = "Todo el Tiempo";
+"stats.peace" = "Paz";
+"stats.thisMonth" = "Este Mes";
+"stats.lastMonth" = "Mes Pasado";
+"stats.thisYear" = "Este Año";
+"stats.allTime" = "Todo";
+"stats.timeRange" = "Rango de Tiempo";
+"stats.monthlyTrend" = "Tendencia Mensual";
+"stats.dailyTrend" = "Tendencia Diaria";
+"stats.monthMemories %lld" = "%lld recuerdos este mes";
+
+// MARK: - Milestones
+"milestones.title" = "Hitos";
+"milestones.daysLeft" = "Días Restantes";
+"milestones.noUpcoming" = "No hay días especiales próximos";
+"milestones.anniversary" = "Aniversario";
+"milestones.firstKiss" = "Primer Beso";
+"milestones.firstDate" = "Primera Cita";
+"milestones.firstTrip" = "Primer Viaje";
+"milestones.engagement" = "Compromiso";
+"milestones.wedding" = "Boda";
+"milestones.custom" = "Personalizado";
+"milestones.proposal" = "Propuesta";
+"milestones.trip" = "Viaje";
+"milestones.other" = "Otro";
+"milestones.upcoming" = "Próximos";
+"milestones.past" = "Momentos Pasados";
+"milestones.todaySpecial" = "¡Hoy es especial! 🎉";
+"milestones.daysRemaining %lld" = "Quedan %lld días";
+
+// MARK: - Gallery
+"gallery.title" = "Galería";
+"gallery.empty.title" = "Aún no hay fotos";
+"gallery.empty.subtitle" = "Llena la galería añadiendo fotos a tus recuerdos";
+
+// MARK: - Time Capsule
+"capsule.title" = "Cápsula del Tiempo";
+"capsule.received" = "Recibidos";
+"capsule.sent" = "Enviados";
+"capsule.create" = "Crear Cápsula";
+"capsule.createTitle" = "Enviar Mensaje al Futuro";
+"capsule.createSubtitle" = "Deja un mensaje sorpresa para tu pareja.\n¡Se abrirá en la fecha que especifiques!";
+"capsule.message" = "Mensaje";
+"capsule.messagePlaceholder" = "Escribe tu mensaje...";
+"capsule.unlockDate" = "Fecha de Apertura";
+"capsule.privacy" = "Configuración de Privacidad";
+"capsule.sendCapsule" = "Enviar Cápsula";
+"capsule.locked" = "Esta cápsula aún está bloqueada";
+"capsule.unlockable" = "¡Toca para abrir! 🎉";
+"capsule.opened" = "Abierto ✓";
+"capsule.openedMessages" = "Mensajes Abiertos";
+"capsule.secretCapsule" = "🤫 Cápsula Secreta";
+"capsule.surprise" = "¡Sorpresa! ✨";
+"capsule.swipeToDelete" = "← desliza a la izquierda para eliminar";
+"capsule.deleteConfirm" = "¿Estás seguro de que quieres eliminar esta cápsula?";
+"capsule.partnerOpened" = "¡Tu pareja abrió tu mensaje! 🎉";
+"capsule.waitingToOpen" = "Esperando ser abierto...";
+"capsule.yourMessage" = "Tu mensaje:";
+"capsule.secretOpened" = "💌 ¡Tu Mensaje Secreto fue Abierto!";
+
+// MARK: - Location
+"location.title" = "Ubicación";
+"location.myLocation" = "Mi Ubicación";
+"location.partner" = "Pareja";
+"location.noPartner" = "Ubicación de pareja no encontrada";
+"location.notShared" = "Tu pareja aún no ha compartido su ubicación";
+"location.permissionTitle" = "Permiso de Ubicación Requerido";
+"location.permissionDesc" = "Necesitas permitir el acceso a la ubicación para ver la ubicación de tu pareja y compartir la tuya.";
+"location.grantPermission" = "Otorgar Permiso de Ubicación";
+"location.justNow" = "Ahora mismo";
+"location.minutesAgo" = "hace %d min";
+"location.hoursAgo" = "hace %d horas";
+"location.daysAgo" = "hace %d días";
+
+// MARK: - Todo
+"todo.title" = "Tareas";
+"todo.add" = "Añadir Tarea";
+"todo.whatTodo" = "¿Qué hay que hacer?";
+"todo.placeholder" = "ej. Ir de compras";
+"todo.incomplete" = "Pendientes (%d)";
+"todo.completed" = "Completadas (%d)";
+"todo.empty.title" = "Nada que hacer aún";
+"todo.empty.subtitle" = "Toca el botón + para añadir una tarea";
+"todo.allDone" = "¡Todo listo! 🎉";
+
+// MARK: - Gift
+"gift.title" = "Ideas de Regalo";
+"gift.add" = "Añadir idea de regalo...";
+"gift.empty.title" = "Aún no hay ideas de regalo";
+"gift.empty.subtitle" = "¡Añade tu primera idea!";
+
+// MARK: - Profile
+"profile.title" = "Perfil";
+"profile.editProfile" = "Editar Perfil";
+"profile.username" = "Nombre de Usuario";
+"profile.email" = "Correo Electrónico";
+"profile.logout" = "Cerrar Sesión";
+"profile.deleteAccount" = "Eliminar Cuenta";
+"profile.startDate" = "Fecha de Inicio de Relación";
+
+// MARK: - Relationship Date
+"relationshipDate.title" = "Fecha de Inicio de Relación";
+"relationshipDate.subtitle" = "¿Cuándo comenzó su relación?";
+"relationshipDate.select" = "Seleccionar Fecha";
+
+// MARK: - Moods
+"mood.happy" = "Feliz";
+"mood.tired" = "Cansado/a";
+"mood.leaveMeAlone" = "Déjame Solo/a";
+"mood.inLove" = "Enamorado/a";
+
+// MARK: - Share
+"share.title" = "Compartir";
+"share.toInstagram" = "Compartir en Instagram";
+"share.saveImage" = "Guardar Imagen";
+"share.copy" = "Copiar Enlace";
+
+// MARK: - Errors
+"error.network" = "Error de red. Por favor, inténtalo de nuevo.";
+"error.unknown" = "Algo salió mal.";
+"error.invalidInput" = "Por favor, revisa tu entrada.";
+"error.notFound" = "No encontrado";
+"error.unauthorized" = "Por favor, inicia sesión de nuevo.";
+
+// MARK: - Additional Keys (New)
+"common.all" = "Todo";
+"common.copy" = "Copiar";
+"common.comingSoon" = "Próximamente";
+"todo.empty.done" = "¡Genial! Nada que hacer 🎉";
+"capsule.noReceived" = "No hay cápsulas recibidas";
+"capsule.noSent" = "No hay cápsulas enviadas";
+"capsule.waitingFromPartner" = "¡Esperando una cápsula de tu pareja!";
+"capsule.sendSecret" = "¡Envía un mensaje secreto a tu pareja!";
+"capsule.tapToOpen" = "¡Toca para abrir! 🎉";
+"capsule.sentMessage" = "Tu mensaje:";
+"capsule.stillLocked" = "Esta cápsula aún está bloqueada";
+"capsule.secretMessage" = "Mensaje Secreto";
+"capsule.sentCapsule" = "Cápsula Enviada";
+"capsule.titlePlaceholder" = "Ej: Mensaje Sorpresa 💝";
+"capsule.privacyTitle" = "Título";
+"capsule.privacyDuration" = "Duración";
+"capsule.privacyPreview" = "Vista Previa";
+"capsule.hideTitle" = "Ocultar Título";
+"capsule.hideTitleDesc" = "El título estará oculto hasta abrirse";
+"capsule.hideCountdown" = "Ocultar Cuenta Regresiva";
+"capsule.hideCountdownDesc" = "El tiempo restante estará oculto";
+"capsule.hideCompletely" = "Ocultar Completamente";
+"capsule.hideCompletelyDesc" = "La cápsula estará oculta hasta abrirse";
+"capsule.swipeToDelete" = "← desliza a la izquierda para eliminar";
+"capsule.secretCapsule" = "🤫 Cápsula Secreta";
+"capsule.secretOpened" = "💌 ¡Tu Mensaje Secreto se Abrió!";
+"stats.totalMemories" = "Total de Recuerdos";
+"stats.resolutionRate" = "Tasa de Resolución";
+"stats.conflictReasons" = "Razones de Conflictos";
+"pairing.subtitle" = "Comiencen el viaje juntos";
+"pairing.shareCode" = "Comparte este código con tu pareja";
+"pairing.enterCodeBtn" = "Ingresar Código";
+"addEvent.notes" = "Notas";
+"addEvent.location" = "Ubicación (opcional)";
+"addEvent.milestoneType" = "Tipo de Hito";
+"addEvent.category" = "Categoría";
+"addEvent.whoStarted" = "¿Quién empezó?";
+"addEvent.me" = "Yo";
+"addEvent.partner" = "Mi Pareja";
+"addEvent.severity" = "Severidad";
+"addEvent.eventTitle.placeholder" = "Título (Ej: Nuestra Primera Cita)";
+"addEvent.date" = "Fecha";
+"addEvent.photos" = "Fotos";
+"relationshipDate.info" = "Esta fecha será visible para ambos";
+"relationshipDate.startDate" = "Fecha de Inicio";
+"profile.logoutConfirm" = "¿Estás seguro de que quieres cerrar sesión?";
+"timeline.title" = "Nuestra Historia";
+"timeline.filter.all" = "Todo";
+"timeline.filter.memory" = "Recuerdos";
+"timeline.filter.conflict" = "Conflictos";
+"location.title" = "Ubicación";
+"gallery.photoCount %lld" = "%lld fotos";
+"home.yourMood" = "Tu Estado de Ánimo";

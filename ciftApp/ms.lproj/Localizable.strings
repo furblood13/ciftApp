@@ -1,0 +1,334 @@
+/* 
+  Localizable.strings (Malay)
+  ciftApp
+  
+  Us & Time - Relationship OS
+*/
+
+// MARK: - Common
+"common.cancel" = "Batal";
+"common.save" = "Simpan";
+"common.delete" = "Padam";
+"common.edit" = "Edit";
+"common.done" = "Selesai";
+"common.add" = "Tambah";
+"common.refresh" = "Muat Semula";
+"common.loading" = "Memuatkan...";
+"common.error" = "Ralat";
+"common.success" = "Berjaya";
+"common.confirm" = "Sahkan";
+"common.yes" = "Ya";
+"common.no" = "Tidak";
+"common.ok" = "OK";
+"common.back" = "Kembali";
+"common.next" = "Seterusnya";
+"common.skip" = "Langkau";
+"common.share" = "Kongsi";
+"common.close" = "Tutup";
+
+// MARK: - App
+"app.name" = "Us & Time";
+"app.tagline" = "Kisah hubungan anda";
+
+// MARK: - Home
+"home.title" = "Us & Time";
+"home.together" = "Bersama";
+"home.days" = "hari";
+"home.yourMood" = "Mood Anda";
+"home.timeline" = "Timeline";
+"home.timeline.subtitle" = "Kenangan dan peristiwa";
+"home.location" = "Lokasi";
+"home.location.subtitle" = "Di mana pasangan?";
+"home.capsule" = "Kapsul Masa";
+"home.capsule.subtitle" = "Mesej untuk masa depan";
+"home.todo" = "Senarai Tugasan";
+"home.todo.subtitle" = "Tugasan bersama";
+"home.gift" = "Hadiah";
+"home.gift.subtitle" = "Idea hadiah kejutan";
+"home.dayMessage.new" = "Permulaan baru! 🌱";
+"home.dayMessage.good" = "Berjalan dengan baik! 💕";
+"home.dayMessage.wonderful" = "Perjalanan yang indah! ✨";
+"home.dayMessage.year" = "Setahun berlalu! 🎉";
+"home.dayMessage.legend" = "Pasangan legenda! 👑";
+
+// MARK: - Auth
+"auth.title" = "Us & Time";
+"auth.subtitle" = "Relationship OS";
+"auth.email" = "Emel";
+"auth.password" = "Kata Laluan";
+"auth.login" = "Log Masuk";
+"auth.signup" = "Daftar";
+"auth.noAccount" = "Tiada akaun?";
+"auth.hasAccount" = "Sudah ada akaun?";
+"auth.forgotPassword" = "Lupa Kata Laluan?";
+"auth.magicLink" = "Log masuk dengan Magic Link";
+"auth.checkEmail" = "Semak emel untuk pautan log masuk";
+
+// MARK: - Pairing
+"pairing.title" = "Sambung dengan Pasangan";
+"pairing.subtitle" = "Kongsi kod anda atau masukkan kod pasangan";
+"pairing.yourCode" = "Kod Anda";
+"pairing.enterCode" = "Masukkan Kod Pasangan";
+"pairing.connect" = "Sambung";
+"pairing.copied" = "Kod disalin!";
+"pairing.waiting" = "Menunggu pasangan...";
+"pairing.success" = "Berjaya disambungkan!";
+"pairing.error" = "Sambungan gagal";
+"pairing.invalidCode" = "Kod tidak sah";
+"pairing.generateNew" = "Jana Kod Baru";
+
+// MARK: - Timeline
+"timeline.title" = "Timeline";
+"timeline.empty.title" = "Belum ada cerita";
+"timeline.empty.subtitle" = "Mula dengan menambah kenangan pertama";
+"timeline.filter.all" = "Semua";
+"timeline.filter.memory" = "Kenangan";
+"timeline.filter.conflict" = "Konflik";
+"timeline.filter.milestone" = "Pencapaian";
+"timeline.stats" = "Statistik";
+"timeline.milestones" = "Pencapaian";
+"timeline.gallery" = "Galeri";
+"timeline.addEvent" = "Tambah Acara";
+
+// MARK: - Add Event
+"addEvent.title" = "Acara Baru";
+"addEvent.selectType" = "Pilih jenis acara";
+"addEvent.memory" = "Kenangan";
+"addEvent.memory.subtitle" = "Momen indah";
+"addEvent.conflict" = "Konflik";
+"addEvent.conflict.subtitle" = "Perselisihan";
+"addEvent.milestone" = "Pencapaian";
+"addEvent.milestone.subtitle" = "Kejayaan istimewa";
+"addEvent.eventTitle" = "Tajuk";
+"addEvent.eventTitle.placeholder" = "Apa yang berlaku?";
+"addEvent.description" = "Penerangan";
+"addEvent.description.placeholder" = "Ceritakan kisahnya...";
+"addEvent.date" = "Tarikh";
+"addEvent.photos" = "Foto";
+"addEvent.addPhoto" = "Tambah Foto";
+"addEvent.category" = "Kategori";
+"addEvent.severity" = "Tahap Keterukan";
+"addEvent.whoStarted" = "Siapa yang Mulakan?";
+"addEvent.me" = "Saya";
+"addEvent.partner" = "Pasangan";
+"addEvent.both" = "Berdua";
+"addEvent.create" = "Cipta Acara";
+
+// MARK: - Event Detail
+"eventDetail.delete" = "Padam";
+"eventDetail.deleteConfirm" = "Pasti mahu padam acara ini?";
+"eventDetail.startedBy" = "Dimulakan oleh:";
+"eventDetail.category" = "Kategori:";
+"eventDetail.severity" = "Tahap Keterukan:";
+"eventDetail.lessonLearned" = "Pengajaran:";
+"eventDetail.resolved" = "Selesai";
+"eventDetail.resolve" = "Sudah Berbaik / Selesai";
+"eventDetail.resolveTitle" = "Pengajaran yang Dipelajari";
+"eventDetail.resolveMessage" = "Apa yang dipelajari? (Pilihan)";
+"eventDetail.resolvePlaceholder" = "Kami belajar bahawa...";
+"eventDetail.resolveSuccess" = "Bagus! Gembira masalah selesai. ❤️";
+"eventDetail.saveResolve" = "Simpan dan Berdamai";
+
+// MARK: - Conflict Categories
+"conflict.food" = "Makanan";
+"conflict.jealousy" = "Cemburu";
+"conflict.finance" = "Kewangan";
+"conflict.chores" = "Kerja Rumah";
+"conflict.communication" = "Komunikasi";
+"conflict.family" = "Keluarga";
+"conflict.time" = "Masa/Perhatian";
+"conflict.other" = "Lain-lain";
+
+// MARK: - Event Detail
+"eventDetail.title" = "Butiran";
+
+// MARK: - Stats
+"stats.title" = "Statistik";
+"stats.totalEvents" = "Jumlah Acara";
+"stats.memories" = "Kenangan";
+"stats.conflicts" = "Konflik";
+"stats.milestones" = "Pencapaian";
+"stats.resolvedConflicts" = "Konflik Diselesaikan";
+"stats.avgSeverity" = "Tahap Purata";
+"stats.mostCommonCategory" = "Kategori Terbanyak";
+"stats.trend" = "Trend";
+"stats.period.month" = "Bulan";
+"stats.period.year" = "Tahun";
+"stats.period.all" = "Semua Masa";
+
+// MARK: - Milestones
+"milestones.title" = "Pencapaian";
+"milestones.daysLeft" = "Hari Lagi";
+"milestones.noUpcoming" = "Tiada hari istimewa akan datang";
+"milestones.anniversary" = "Ulang Tahun";
+"milestones.firstKiss" = "Ciuman Pertama";
+"milestones.firstDate" = "Temu Janji Pertama";
+"milestones.firstTrip" = "Perjalanan Pertama";
+"milestones.engagement" = "Pertunangan";
+"milestones.wedding" = "Perkahwinan";
+"milestones.custom" = "Kustom";
+
+// MARK: - Gallery
+"gallery.title" = "Galeri";
+"gallery.empty.title" = "Belum ada foto";
+"gallery.empty.subtitle" = "Isi galeri dengan menambah foto ke kenangan";
+
+// MARK: - Time Capsule
+"capsule.title" = "Kapsul Masa";
+"capsule.received" = "Diterima";
+"capsule.sent" = "Dihantar";
+"capsule.create" = "Cipta Kapsul";
+"capsule.createTitle" = "Hantar Mesej ke Masa Depan";
+"capsule.createSubtitle" = "Tinggalkan mesej kejutan untuk pasangan.\nAkan dibuka pada tarikh yang anda tentukan!";
+"capsule.message" = "Mesej";
+"capsule.messagePlaceholder" = "Tulis mesej anda...";
+"capsule.unlockDate" = "Tarikh Buka";
+"capsule.privacy" = "Tetapan Privasi";
+"capsule.sendCapsule" = "Hantar Kapsul";
+"capsule.locked" = "Kapsul ini masih berkunci";
+"capsule.unlockable" = "Ketik untuk buka! 🎉";
+"capsule.opened" = "Dibuka ✓";
+"capsule.openedMessages" = "Mesej Terbuka";
+"capsule.secretCapsule" = "🤫 Kapsul Rahsia";
+"capsule.surprise" = "Kejutan! ✨";
+"capsule.swipeToDelete" = "← leret kiri untuk padam";
+"capsule.deleteConfirm" = "Pasti mahu padam kapsul ini?";
+"capsule.partnerOpened" = "Pasangan membuka mesej anda! 🎉";
+"capsule.waitingToOpen" = "Menunggu dibuka...";
+"capsule.yourMessage" = "Mesej anda:";
+"capsule.secretOpened" = "💌 Mesej Rahsia Anda Dibuka!";
+
+// MARK: - Location
+"location.title" = "Lokasi";
+"location.myLocation" = "Lokasi Saya";
+"location.partner" = "Pasangan";
+"location.noPartner" = "Lokasi pasangan tidak dijumpai";
+"location.notShared" = "Pasangan belum kongsi lokasi";
+"location.permissionTitle" = "Kebenaran Lokasi Diperlukan";
+"location.permissionDesc" = "Anda perlu membenarkan akses lokasi untuk melihat lokasi pasangan dan berkongsi lokasi anda.";
+"location.grantPermission" = "Beri Kebenaran Lokasi";
+"location.justNow" = "Baru sahaja";
+"location.minutesAgo" = "%d minit lalu";
+"location.hoursAgo" = "%d jam lalu";
+"location.daysAgo" = "%d hari lalu";
+
+// MARK: - Todo
+"todo.title" = "Senarai Tugasan";
+"todo.add" = "Tambah Tugasan";
+"todo.whatTodo" = "Apa yang perlu dilakukan?";
+"todo.placeholder" = "cth. Beli groceries";
+"todo.incomplete" = "Belum Selesai (%d)";
+"todo.completed" = "Selesai (%d)";
+"todo.empty.title" = "Belum ada tugasan";
+"todo.empty.subtitle" = "Ketik butang + untuk menambah tugasan";
+"todo.allDone" = "Semua selesai! 🎉";
+
+// MARK: - Gift
+"gift.title" = "Idea Hadiah";
+"gift.add" = "Tambah idea hadiah...";
+"gift.empty.title" = "Belum ada idea hadiah";
+"gift.empty.subtitle" = "Tambah idea pertama anda!";
+
+// MARK: - Profile
+"profile.title" = "Profil";
+"profile.editProfile" = "Edit Profil";
+"profile.username" = "Nama Pengguna";
+"profile.email" = "Emel";
+"profile.logout" = "Log Keluar";
+"profile.deleteAccount" = "Padam Akaun";
+"profile.startDate" = "Tarikh Mula Hubungan";
+
+// MARK: - Relationship Date
+"relationshipDate.title" = "Tarikh Mula Hubungan";
+"relationshipDate.subtitle" = "Bila hubungan anda bermula?";
+"relationshipDate.select" = "Pilih Tarikh";
+
+// MARK: - Moods
+"mood.happy" = "Gembira";
+"mood.tired" = "Penat";
+"mood.leaveMeAlone" = "Tinggalkan Saya Sendiri";
+"mood.inLove" = "Jatuh Cinta";
+
+// MARK: - Share
+"share.title" = "Kongsi";
+"share.toInstagram" = "Kongsi ke Instagram";
+"share.saveImage" = "Simpan Gambar";
+"share.copy" = "Salin Pautan";
+
+// MARK: - Errors
+"error.network" = "Ralat rangkaian. Sila cuba lagi.";
+"error.unknown" = "Sesuatu tidak kena.";
+"error.invalidInput" = "Sila semak input anda.";
+"error.notFound" = "Tidak dijumpai";
+"error.unauthorized" = "Sila log masuk semula.";
+
+// MARK: - Additional Keys (New)
+"common.all" = "Semua";
+"common.copy" = "Salin";
+"common.comingSoon" = "Akan Datang";
+"todo.empty.done" = "Hebat! Tiada apa untuk dibuat 🎉";
+"capsule.noReceived" = "Tiada kapsul diterima";
+"capsule.noSent" = "Tiada kapsul dihantar";
+"capsule.waitingFromPartner" = "Menunggu kapsul dari pasangan!";
+"capsule.sendSecret" = "Hantar mesej rahsia kepada pasangan!";
+"capsule.tapToOpen" = "Ketik untuk buka! 🎉";
+"capsule.sentMessage" = "Mesej anda:";
+"capsule.stillLocked" = "Kapsul ini masih berkunci";
+"capsule.secretMessage" = "Mesej Rahsia";
+"capsule.sentCapsule" = "Kapsul Dihantar";
+"capsule.titlePlaceholder" = "Cth: Mesej Kejutan 💝";
+"capsule.privacyTitle" = "Tajuk";
+"capsule.privacyDuration" = "Tempoh";
+"capsule.privacyPreview" = "Pratonton";
+"capsule.hideTitle" = "Sembunyikan Tajuk";
+"capsule.hideTitleDesc" = "Tajuk tersembunyi sehingga dibuka";
+"capsule.hideCountdown" = "Sembunyikan Kira Detik";
+"capsule.hideCountdownDesc" = "Masa berbaki tersembunyi";
+"capsule.hideCompletely" = "Sembunyikan Sepenuhnya";
+"capsule.hideCompletelyDesc" = "Kapsul tersembunyi sehingga dibuka";
+"capsule.swipeToDelete" = "← leret kiri untuk padam";
+"capsule.secretCapsule" = "🤫 Kapsul Rahsia";
+"capsule.secretOpened" = "💌 Mesej Rahsia Anda Dibuka!";
+"stats.totalMemories" = "Jumlah Kenangan";
+"stats.resolutionRate" = "Kadar Penyelesaian";
+"stats.conflictReasons" = "Sebab-sebab Konflik";
+"stats.peace" = "Damai";
+"stats.thisMonth" = "Bulan Ini";
+"stats.lastMonth" = "Bulan Lepas";
+"stats.thisYear" = "Tahun Ini";
+"stats.allTime" = "Sepanjang Masa";
+"stats.timeRange" = "Julat Masa";
+"stats.monthlyTrend" = "Trend Bulanan";
+"stats.dailyTrend" = "Trend Harian";
+"stats.monthMemories %lld" = "%lld kenangan bulan ini";
+"milestones.upcoming" = "Akan Datang";
+"milestones.past" = "Saat Lampau";
+"milestones.todaySpecial" = "Hari ini istimewa! 🎉";
+"milestones.daysRemaining %lld" = "%lld hari lagi";
+"milestones.proposal" = "Lamaran";
+"milestones.trip" = "Perjalanan";
+"milestones.other" = "Lain-lain";
+"gallery.photoCount %lld" = "%lld foto";
+"pairing.subtitle" = "Mulakan perjalanan bersama";
+"pairing.shareCode" = "Kongsi kod ini dengan pasangan";
+"pairing.enterCodeBtn" = "Masukkan Kod";
+"addEvent.notes" = "Nota";
+"addEvent.location" = "Lokasi (pilihan)";
+"addEvent.milestoneType" = "Jenis Pencapaian";
+"addEvent.category" = "Kategori";
+"addEvent.whoStarted" = "Siapa yang Mula?";
+"addEvent.me" = "Saya";
+"addEvent.partner" = "Pasangan";
+"addEvent.severity" = "Tahap Keseriusan";
+"addEvent.eventTitle.placeholder" = "Tajuk (Cth: Tarikh Pertama)";
+"addEvent.date" = "Tarikh";
+"addEvent.photos" = "Foto";
+"relationshipDate.info" = "Tarikh ini akan kelihatan kepada kedua-dua pasangan";
+"relationshipDate.startDate" = "Tarikh Mula";
+"profile.logoutConfirm" = "Pasti mahu log keluar?";
+"timeline.title" = "Kisah Kita";
+"timeline.filter.all" = "Semua";
+"timeline.filter.memory" = "Kenangan";
+"timeline.filter.conflict" = "Konflik";
+"location.title" = "Lokasi";
+"home.yourMood" = "Mood Anda";

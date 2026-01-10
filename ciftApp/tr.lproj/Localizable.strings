@@ -1,0 +1,334 @@
+/* 
+  Localizable.strings (Turkish)
+  ciftApp
+  
+  Us & Time - Relationship OS
+*/
+
+// MARK: - Common
+"common.cancel" = "İptal";
+"common.save" = "Kaydet";
+"common.delete" = "Sil";
+"common.edit" = "Düzenle";
+"common.done" = "Tamam";
+"common.add" = "Ekle";
+"common.refresh" = "Yenile";
+"common.loading" = "Yükleniyor...";
+"common.error" = "Hata";
+"common.success" = "Başarılı";
+"common.confirm" = "Onayla";
+"common.yes" = "Evet";
+"common.no" = "Hayır";
+"common.ok" = "Tamam";
+"common.back" = "Geri";
+"common.next" = "İleri";
+"common.skip" = "Atla";
+"common.share" = "Paylaş";
+"common.close" = "Kapat";
+
+// MARK: - App
+"app.name" = "Us & Time";
+"app.tagline" = "İlişkinizin hikayesi";
+
+// MARK: - Home
+"home.title" = "Us & Time";
+"home.together" = "Birlikte";
+"home.days" = "gün";
+"home.yourMood" = "Ruh Halin";
+"home.timeline" = "Timeline";
+"home.timeline.subtitle" = "Anılar ve olaylar";
+"home.location" = "Konum";
+"home.location.subtitle" = "Partner nerede?";
+"home.capsule" = "Zaman Kapsülü";
+"home.capsule.subtitle" = "Gelecekte açılacak mesajlar";
+"home.todo" = "Yapılacaklar";
+"home.todo.subtitle" = "Ortak görevler";
+"home.gift" = "Hediye";
+"home.gift.subtitle" = "Sürpriz hediye fikirleri";
+"home.dayMessage.new" = "Yeni bir başlangıç! 🌱";
+"home.dayMessage.good" = "Harika gidiyor! 💕";
+"home.dayMessage.wonderful" = "Muhteşem bir yolculuk! ✨";
+"home.dayMessage.year" = "Bir yıl geçti! 🎉";
+"home.dayMessage.legend" = "Efsane çift! 👑";
+
+// MARK: - Auth
+"auth.title" = "Us & Time";
+"auth.subtitle" = "İlişki İşletim Sistemi";
+"auth.email" = "E-posta";
+"auth.password" = "Şifre";
+"auth.login" = "Giriş Yap";
+"auth.signup" = "Kayıt Ol";
+"auth.noAccount" = "Hesabın yok mu?";
+"auth.hasAccount" = "Zaten hesabın var mı?";
+"auth.forgotPassword" = "Şifremi Unuttum";
+"auth.magicLink" = "Magic Link ile Giriş Yap";
+"auth.checkEmail" = "Giriş linki için e-postanı kontrol et";
+
+// MARK: - Pairing
+"pairing.title" = "Partner ile Bağlan";
+"pairing.subtitle" = "Kodunu paylaş veya partnerin kodunu gir";
+"pairing.yourCode" = "Senin Kodun";
+"pairing.enterCode" = "Partner Kodunu Gir";
+"pairing.connect" = "Bağlan";
+"pairing.copied" = "Kod kopyalandı!";
+"pairing.waiting" = "Partner bekleniyor...";
+"pairing.success" = "Başarıyla bağlandı!";
+"pairing.error" = "Bağlantı hatası";
+"pairing.invalidCode" = "Geçersiz kod";
+"pairing.generateNew" = "Yeni Kod Oluştur";
+
+// MARK: - Timeline
+"timeline.title" = "Timeline";
+"timeline.empty.title" = "Henüz hikaye yok";
+"timeline.empty.subtitle" = "İlk anınızı ekleyerek başlayın";
+"timeline.filter.all" = "Tümü";
+"timeline.filter.memory" = "Anı";
+"timeline.filter.conflict" = "Tartışma";
+"timeline.filter.milestone" = "Dönüm Noktası";
+"timeline.stats" = "İstatistikler";
+"timeline.milestones" = "Dönüm Noktaları";
+"timeline.gallery" = "Galeri";
+"timeline.addEvent" = "Olay Ekle";
+
+// MARK: - Add Event
+"addEvent.title" = "Yeni Olay";
+"addEvent.selectType" = "Olay türünü seçin";
+"addEvent.memory" = "Anı";
+"addEvent.memory.subtitle" = "Güzel bir anı";
+"addEvent.conflict" = "Tartışma";
+"addEvent.conflict.subtitle" = "Bir anlaşmazlık";
+"addEvent.milestone" = "Dönüm Noktası";
+"addEvent.milestone.subtitle" = "Özel bir başarı";
+"addEvent.eventTitle" = "Başlık";
+"addEvent.eventTitle.placeholder" = "Ne oldu?";
+"addEvent.description" = "Açıklama";
+"addEvent.description.placeholder" = "Hikayeyi anlat...";
+"addEvent.date" = "Tarih";
+"addEvent.photos" = "Fotoğraflar";
+"addEvent.addPhoto" = "Fotoğraf Ekle";
+"addEvent.category" = "Kategori";
+"addEvent.severity" = "Şiddet";
+"addEvent.whoStarted" = "Kim Başlattı?";
+"addEvent.me" = "Ben";
+"addEvent.partner" = "Partner";
+"addEvent.both" = "İkimiz";
+"addEvent.create" = "Olay Oluştur";
+
+// MARK: - Event Detail
+"eventDetail.delete" = "Sil";
+"eventDetail.deleteConfirm" = "Bu etkinliği silmek istediğinize emin misiniz?";
+"eventDetail.startedBy" = "Başlatan:";
+"eventDetail.category" = "Kategori:";
+"eventDetail.severity" = "Şiddet:";
+"eventDetail.lessonLearned" = "Öğrenilen Ders:";
+"eventDetail.resolved" = "Çözüldü";
+"eventDetail.resolve" = "Barıştık / Sorunu Çözdük";
+"eventDetail.resolveTitle" = "Öğrenilen Ders";
+"eventDetail.resolveMessage" = "Neler öğrendiniz? (İsteğe bağlı)";
+"eventDetail.resolvePlaceholder" = "Öğrendik ki...";
+"eventDetail.resolveSuccess" = "Harika! Bu sorunu çözdüğünüze sevindim. ❤️";
+"eventDetail.saveResolve" = "Kaydet ve Barış";
+
+// MARK: - Conflict Categories
+"conflict.food" = "Yemek";
+"conflict.jealousy" = "Kıskançlık";
+"conflict.finance" = "Para";
+"conflict.chores" = "Ev İşleri";
+"conflict.communication" = "İletişim";
+"conflict.family" = "Aile";
+"conflict.time" = "Zaman/İlgi";
+"conflict.other" = "Diğer";
+
+// MARK: - Event Detail
+"eventDetail.title" = "Detay";
+
+// MARK: - Stats
+"stats.title" = "İstatistikler";
+"stats.totalEvents" = "Toplam Olay";
+"stats.memories" = "Anılar";
+"stats.conflicts" = "Tartışmalar";
+"stats.milestones" = "Dönüm Noktaları";
+"stats.resolvedConflicts" = "Çözülen Tartışmalar";
+"stats.avgSeverity" = "Ortalama Şiddet";
+"stats.mostCommonCategory" = "En Yaygın Kategori";
+"stats.trend" = "Trend";
+"stats.period.month" = "Ay";
+"stats.period.year" = "Yıl";
+"stats.period.all" = "Tüm Zamanlar";
+
+// MARK: - Milestones
+"milestones.title" = "Dönüm Noktaları";
+"milestones.daysLeft" = "Gün Kaldı";
+"milestones.noUpcoming" = "Yaklaşan özel gün yok";
+"milestones.anniversary" = "Yıl Dönümü";
+"milestones.firstKiss" = "İlk Öpücük";
+"milestones.firstDate" = "İlk Buluşma";
+"milestones.firstTrip" = "İlk Seyahat";
+"milestones.engagement" = "Nişan";
+"milestones.wedding" = "Düğün";
+"milestones.custom" = "Özel";
+"milestones.proposal" = "Evlilik Teklifi";
+"milestones.trip" = "Seyahat";
+"milestones.other" = "Diğer";
+
+// MARK: - Gallery
+"gallery.title" = "Galeri";
+"gallery.empty.title" = "Henüz fotoğraf yok";
+"gallery.empty.subtitle" = "Anılarınıza fotoğraf ekleyerek galeriyi doldurun";
+
+// MARK: - Time Capsule
+"capsule.title" = "Zaman Kapsülü";
+"capsule.received" = "Gelen";
+"capsule.sent" = "Gönderilen";
+"capsule.create" = "Kapsül Oluştur";
+"capsule.createTitle" = "Geleceğe Mesaj Gönder";
+"capsule.createSubtitle" = "Partnerine sürpriz bir mesaj bırak.\nBelirttiğin tarihte açılacak!";
+"capsule.message" = "Mesaj";
+"capsule.messagePlaceholder" = "Mesajını yaz...";
+"capsule.unlockDate" = "Açılma Tarihi";
+"capsule.privacy" = "Gizlilik Ayarları";
+"capsule.sendCapsule" = "Kapsülü Gönder";
+"capsule.locked" = "Bu kapsül henüz kilitli";
+"capsule.unlockable" = "Dokunarak aç! 🎉";
+"capsule.opened" = "Açıldı ✓";
+"capsule.openedMessages" = "Açılan Mesajlar";
+"capsule.secretCapsule" = "🤫 Gizli Kapsül";
+"capsule.surprise" = "Sürpriz! ✨";
+"capsule.swipeToDelete" = "← sola kaydırarak silebilirsin";
+"capsule.deleteConfirm" = "Bu kapsülü silmek istediğinize emin misiniz?";
+"capsule.partnerOpened" = "Partnerin mesajını açtı! 🎉";
+"capsule.waitingToOpen" = "Açılmayı bekliyor...";
+"capsule.yourMessage" = "Gönderdiğin mesaj:";
+"capsule.secretOpened" = "💌 Gizli Mesajın Açıldı!";
+
+// MARK: - Location
+"location.title" = "Konum";
+"location.myLocation" = "Benim Konumum";
+"location.partner" = "Partner";
+"location.noPartner" = "Partner konumu bulunamadı";
+"location.notShared" = "Partner henüz konumunu paylaşmamış";
+"location.permissionTitle" = "Konum İzni Gerekli";
+"location.permissionDesc" = "Partnerinizin konumunu görmek ve konumunuzu paylaşmak için konum erişimine izin vermeniz gerekiyor.";
+"location.grantPermission" = "Konum İznini Ver";
+"location.justNow" = "Az önce";
+"location.minutesAgo" = "%d dk önce";
+"location.hoursAgo" = "%d saat önce";
+"location.daysAgo" = "%d gün önce";
+
+// MARK: - Todo
+"todo.title" = "Yapılacaklar";
+"todo.add" = "Yapılacak Ekle";
+"todo.whatTodo" = "Ne yapılacak?";
+"todo.placeholder" = "örn. Market alışverişi";
+"todo.incomplete" = "Yapılacak (%d)";
+"todo.completed" = "Tamamlanan (%d)";
+"todo.empty.title" = "Henüz yapılacak bir şey yok";
+"todo.empty.subtitle" = "Aşağıdaki + butonuna tıklayarak\nbir görev ekleyin";
+"todo.allDone" = "Hepsi tamam! 🎉";
+
+// MARK: - Gift
+"gift.title" = "Hediye Fikirleri";
+"gift.add" = "Hediye fikri ekle...";
+"gift.empty.title" = "Henüz hediye fikri yok";
+"gift.empty.subtitle" = "İlk fikrini ekle!";
+
+// MARK: - Profile
+"profile.title" = "Profil";
+"profile.editProfile" = "Profili Düzenle";
+"profile.username" = "Kullanıcı Adı";
+"profile.email" = "E-posta";
+"profile.logout" = "Çıkış Yap";
+"profile.deleteAccount" = "Hesabı Sil";
+"profile.startDate" = "İlişki Başlangıç Tarihi";
+
+// MARK: - Relationship Date
+"relationshipDate.title" = "İlişki Başlangıç Tarihi";
+"relationshipDate.subtitle" = "İlişkiniz ne zaman başladı?";
+"relationshipDate.select" = "Tarih Seç";
+
+// MARK: - Moods
+"mood.happy" = "Mutlu";
+"mood.tired" = "Yorgun";
+"mood.leaveMeAlone" = "Beni Rahat Bırak";
+"mood.inLove" = "Aşık";
+
+// MARK: - Share
+"share.title" = "Paylaş";
+"share.toInstagram" = "Instagram'da Paylaş";
+"share.saveImage" = "Görseli Kaydet";
+"share.copy" = "Linki Kopyala";
+
+// MARK: - Errors
+"error.network" = "Ağ hatası. Lütfen tekrar deneyin.";
+"error.unknown" = "Bir şeyler yanlış gitti.";
+"error.invalidInput" = "Lütfen girdinizi kontrol edin.";
+"error.notFound" = "Bulunamadı";
+"error.unauthorized" = "Lütfen tekrar giriş yapın.";
+
+// MARK: - Additional Keys (New)
+"common.all" = "Tümü";
+"common.copy" = "Kopyala";
+"common.comingSoon" = "Yakında";
+"todo.empty.done" = "Harika! Yapılacak bir şey yok 🎉";
+"capsule.noReceived" = "Gelen kapsül yok";
+"capsule.noSent" = "Gönderilen kapsül yok";
+"capsule.waitingFromPartner" = "Partnerinden bir kapsül bekliyorsun!";
+"capsule.sendSecret" = "Partnerine gizli bir mesaj gönder!";
+"capsule.tapToOpen" = "Dokunarak aç! 🎉";
+"capsule.sentMessage" = "Gönderdiğin mesaj:";
+"capsule.stillLocked" = "Bu kapsül henüz kilitli";
+"capsule.secretMessage" = "Gizli Mesaj";
+"capsule.sentCapsule" = "Gönderilen Kapsül";
+"capsule.titlePlaceholder" = "Örn: Sürpriz Mesaj 💝";
+"capsule.privacyTitle" = "Başlık";
+"capsule.privacyDuration" = "Süre";
+"capsule.privacyPreview" = "Önizleme";
+"capsule.hideTitle" = "Başlığı Gizle";
+"capsule.hideTitleDesc" = "Açılana kadar başlık görünmez";
+"capsule.hideCountdown" = "Geri Sayımı Gizle";
+"capsule.hideCountdownDesc" = "Kalan süre görünmez";
+"capsule.hideCompletely" = "Tamamen Gizle";
+"capsule.hideCompletelyDesc" = "Açılana kadar kapsül görünmez";
+"stats.totalMemories" = "Toplam Anı";
+"stats.resolutionRate" = "Çözüm Oranı";
+"stats.conflictReasons" = "Tartışma Sebepleri";
+"stats.peace" = "Barış";
+"stats.thisMonth" = "Bu Ay";
+"stats.lastMonth" = "Geçen Ay";
+"stats.thisYear" = "Bu Yıl";
+"stats.allTime" = "Tümü";
+"stats.timeRange" = "Zaman Aralığı";
+"stats.monthlyTrend" = "Aylık Trend";
+"stats.dailyTrend" = "Günlük Trend";
+"stats.monthMemories %lld" = "Bu ay %lld anı";
+"milestones.upcoming" = "Yaklaşanlar";
+"milestones.past" = "Geçmiş Anlar";
+"milestones.todaySpecial" = "Bugün özel gün! 🎉";
+"milestones.daysRemaining %lld" = "%lld gün kaldı";
+"gallery.photoCount %lld" = "%lld fotoğraf";
+"pairing.subtitle" = "Birlikte yolculuğa başlayın";
+"pairing.shareCode" = "Bu kodu partnerinizle paylaşın";
+"pairing.enterCodeBtn" = "Kod Gir";
+"addEvent.notes" = "Notlar";
+"addEvent.location" = "Konum (İsteğe bağlı)";
+"addEvent.milestoneType" = "Özel Gün Tipi";
+"addEvent.category" = "Kategori";
+"addEvent.whoStarted" = "Kim Başlattı?";
+"addEvent.me" = "Ben";
+"addEvent.partner" = "Eşim";
+"addEvent.severity" = "Şiddet";
+"addEvent.eventTitle.placeholder" = "Başlık (Örn: İlk Tatilimiz)";
+"addEvent.date" = "Tarih";
+"addEvent.photos" = "Fotoğraflar";
+"capsule.swipeToDelete" = "← sola kaydırarak silebilirsin";
+"capsule.secretCapsule" = "🤫 Gizli Kapsül";
+"capsule.secretOpened" = "💌 Gizli Mesajın Açıldı!";
+"relationshipDate.info" = "Bu tarih her iki partnerin de ekranında görünecek";
+"relationshipDate.startDate" = "Başlangıç Tarihi";
+"profile.logoutConfirm" = "Hesabınızdan çıkış yapmak istediğinize emin misiniz?";
+"timeline.title" = "Hikayemiz";
+"timeline.filter.all" = "Tümü";
+"timeline.filter.memory" = "Anılar";
+"timeline.filter.conflict" = "Tartışmalar";
+"location.title" = "Konum";
+"home.yourMood" = "Ruh Halin";

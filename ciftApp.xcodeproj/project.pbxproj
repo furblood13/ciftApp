@@ -6,14 +6,103 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DC22A3042EF8567400920B1E /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A3032EF8567400920B1E /* Auth */; };
+		DC22A3062EF8567400920B1E /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A3052EF8567400920B1E /* Functions */; };
+		DC22A3082EF8567400920B1E /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A3072EF8567400920B1E /* PostgREST */; };
+		DC22A30A2EF8567400920B1E /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A3092EF8567400920B1E /* Realtime */; };
+		DC22A30C2EF8567400920B1E /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A30B2EF8567400920B1E /* Storage */; };
+		DC22A30E2EF8567400920B1E /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A30D2EF8567400920B1E /* Supabase */; };
+		DC22A3A22EF85F8000920B1E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22A2852EF8413D00920B1E /* WidgetKit.framework */; };
+		DC22A3A32EF85F8000920B1E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC22A2872EF8413D00920B1E /* SwiftUI.framework */; };
+		DC22A3B02EF85F8100920B1E /* CiftWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DC22A3A12EF85F8000920B1E /* CiftWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC22A4582F0D4C9500920B1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */; };
+		DC22A4592F0D4C9500920B1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */; };
+		DC22A46E2F0DCEF000920B1E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A46D2F0DCEF000920B1E /* Lottie */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC22A3AE2EF85F8100920B1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC22A2342EF8254B00920B1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC22A3A02EF85F8000920B1E;
+			remoteInfo = CiftWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC22A29E2EF8413F00920B1E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DC22A3B02EF85F8100920B1E /* CiftWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC22A4652F0DCCA100920B1E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DC22A23C2EF8254B00920B1E /* ciftApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ciftApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC22A2852EF8413D00920B1E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DC22A2872EF8413D00920B1E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DC22A3A12EF85F8000920B1E /* CiftWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CiftWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC22A3B52EF8605D00920B1E /* CiftWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CiftWidgetExtension.entitlements; sourceTree = "<group>"; };
+		DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DC22A2FF2EF8545700920B1E /* Exceptions for "ciftApp" folder in "ciftApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Database/add_creator_id.sql,
+				Database/cleanup_and_fix.sql,
+				Database/couples_rls.sql,
+				Database/fix_profiles_rls.sql,
+				Database/fix_rls_policies.sql,
+				Database/pair_users_function.sql,
+				Database/schema.sql,
+				Info.plist,
+			);
+			target = DC22A23B2EF8254B00920B1E /* ciftApp */;
+		};
+		DC22A3B42EF85F8100920B1E /* Exceptions for "CiftWidget" folder in "CiftWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DC22A3A02EF85F8000920B1E /* CiftWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DC22A23E2EF8254B00920B1E /* ciftApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DC22A2FF2EF8545700920B1E /* Exceptions for "ciftApp" folder in "ciftApp" target */,
+			);
 			path = ciftApp;
+			sourceTree = "<group>";
+		};
+		DC22A3A42EF85F8000920B1E /* CiftWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DC22A3B42EF85F8100920B1E /* Exceptions for "CiftWidget" folder in "CiftWidgetExtension" target */,
+			);
+			path = CiftWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +112,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC22A3082EF8567400920B1E /* PostgREST in Frameworks */,
+				DC22A46E2F0DCEF000920B1E /* Lottie in Frameworks */,
+				DC22A3062EF8567400920B1E /* Functions in Frameworks */,
+				DC22A30E2EF8567400920B1E /* Supabase in Frameworks */,
+				DC22A3042EF8567400920B1E /* Auth in Frameworks */,
+				DC22A30C2EF8567400920B1E /* Storage in Frameworks */,
+				DC22A30A2EF8567400920B1E /* Realtime in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC22A39E2EF85F8000920B1E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC22A3A32EF85F8000920B1E /* SwiftUI.framework in Frameworks */,
+				DC22A3A22EF85F8000920B1E /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +137,11 @@
 		DC22A2332EF8254B00920B1E = {
 			isa = PBXGroup;
 			children = (
+				DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */,
+				DC22A3B52EF8605D00920B1E /* CiftWidgetExtension.entitlements */,
 				DC22A23E2EF8254B00920B1E /* ciftApp */,
+				DC22A3A42EF85F8000920B1E /* CiftWidget */,
+				DC22A2842EF8413D00920B1E /* Frameworks */,
 				DC22A23D2EF8254B00920B1E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +150,18 @@
 			isa = PBXGroup;
 			children = (
 				DC22A23C2EF8254B00920B1E /* ciftApp.app */,
+				DC22A3A12EF85F8000920B1E /* CiftWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DC22A2842EF8413D00920B1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC22A2852EF8413D00920B1E /* WidgetKit.framework */,
+				DC22A2872EF8413D00920B1E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,20 +174,52 @@
 				DC22A2382EF8254B00920B1E /* Sources */,
 				DC22A2392EF8254B00920B1E /* Frameworks */,
 				DC22A23A2EF8254B00920B1E /* Resources */,
+				DC22A29E2EF8413F00920B1E /* Embed Foundation Extensions */,
+				DC22A4652F0DCCA100920B1E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC22A3AF2EF85F8100920B1E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC22A23E2EF8254B00920B1E /* ciftApp */,
 			);
 			name = ciftApp;
 			packageProductDependencies = (
+				DC22A3032EF8567400920B1E /* Auth */,
+				DC22A3052EF8567400920B1E /* Functions */,
+				DC22A3072EF8567400920B1E /* PostgREST */,
+				DC22A3092EF8567400920B1E /* Realtime */,
+				DC22A30B2EF8567400920B1E /* Storage */,
+				DC22A30D2EF8567400920B1E /* Supabase */,
+				DC22A46D2F0DCEF000920B1E /* Lottie */,
 			);
 			productName = ciftApp;
 			productReference = DC22A23C2EF8254B00920B1E /* ciftApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DC22A3A02EF85F8000920B1E /* CiftWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC22A3B12EF85F8100920B1E /* Build configuration list for PBXNativeTarget "CiftWidgetExtension" */;
+			buildPhases = (
+				DC22A39D2EF85F8000920B1E /* Sources */,
+				DC22A39E2EF85F8000920B1E /* Frameworks */,
+				DC22A39F2EF85F8000920B1E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DC22A3A42EF85F8000920B1E /* CiftWidget */,
+			);
+			name = CiftWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CiftWidgetExtension;
+			productReference = DC22A3A12EF85F8000920B1E /* CiftWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +234,9 @@
 					DC22A23B2EF8254B00920B1E = {
 						CreatedOnToolsVersion = 26.2;
 					};
+					DC22A3A02EF85F8000920B1E = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = DC22A2372EF8254B00920B1E /* Build configuration list for PBXProject "ciftApp" */;
@@ -91,15 +245,25 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				tr,
+				hi,
+				id,
+				ms,
 			);
 			mainGroup = DC22A2332EF8254B00920B1E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				DC22A46C2F0DCEF000920B1E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC22A23D2EF8254B00920B1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DC22A23B2EF8254B00920B1E /* ciftApp */,
+				DC22A3A02EF85F8000920B1E /* CiftWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -109,6 +273,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC22A4592F0D4C9500920B1E /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC22A39F2EF85F8000920B1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC22A4582F0D4C9500920B1E /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +295,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC22A39D2EF85F8000920B1E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC22A3AF2EF85F8100920B1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC22A3A02EF85F8000920B1E /* CiftWidgetExtension */;
+			targetProxy = DC22A3AE2EF85F8100920B1E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DC22A2452EF8254C00920B1E /* Debug */ = {
@@ -251,21 +439,28 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ciftApp/ciftApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3K48VR45XU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ciftApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Arka planda bile partnerinizle konum paylaşabilmek için her zaman konum erişimine ihtiyacımız var.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Partnerinizin konumunu görmek ve konumunuzu paylaşmak için konum erişimine ihtiyacımız var.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = furkanbugrakarci.com.ciftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -283,26 +478,97 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ciftApp/ciftApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3K48VR45XU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ciftApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Arka planda bile partnerinizle konum paylaşabilmek için her zaman konum erişimine ihtiyacımız var.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Partnerinizin konumunu görmek ve konumunuzu paylaşmak için konum erişimine ihtiyacımız var.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = furkanbugrakarci.com.ciftApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC22A3B22EF85F8100920B1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CiftWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K48VR45XU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CiftWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CiftWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = furkanbugrakarci.com.ciftApp.CiftWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC22A3B32EF85F8100920B1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CiftWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K48VR45XU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CiftWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CiftWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = furkanbugrakarci.com.ciftApp.CiftWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -331,7 +597,73 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DC22A3B12EF85F8100920B1E /* Build configuration list for PBXNativeTarget "CiftWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC22A3B22EF85F8100920B1E /* Debug */,
+				DC22A3B32EF85F8100920B1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		DC22A46C2F0DCEF000920B1E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm";
+			requirement = {
+				kind = exactVersion;
+				version = 4.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC22A3032EF8567400920B1E /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		DC22A3052EF8567400920B1E /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		DC22A3072EF8567400920B1E /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		DC22A3092EF8567400920B1E /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		DC22A30B2EF8567400920B1E /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		DC22A30D2EF8567400920B1E /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		DC22A46D2F0DCEF000920B1E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A46C2F0DCEF000920B1E /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC22A2342EF8254B00920B1E /* Project object */;
 }
