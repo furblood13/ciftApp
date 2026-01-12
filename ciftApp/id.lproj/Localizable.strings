@@ -211,6 +211,7 @@
 "location.minutesAgo" = "%d menit lalu";
 "location.hoursAgo" = "%d jam lalu";
 "location.daysAgo" = "%d hari lalu";
+"location.me" = "Saya";
 
 // MARK: - Todo
 "todo.title" = "To-Do";
@@ -246,7 +247,7 @@
 // MARK: - Moods
 "mood.happy" = "Senang";
 "mood.tired" = "Lelah";
-"mood.leaveMeAlone" = "Biarkan Saya Sendiri";
+"mood.leaveMeAlone" = "Butuh Perhatian";
 "mood.inLove" = "Jatuh Cinta";
 
 // MARK: - Share

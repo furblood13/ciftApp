@@ -227,6 +227,7 @@
 "location.minutesAgo" = "hace %d min";
 "location.hoursAgo" = "hace %d horas";
 "location.daysAgo" = "hace %d días";
+"location.me" = "Yo";
 
 // MARK: - Todo
 "todo.title" = "Tareas";
@@ -262,7 +263,7 @@
 // MARK: - Moods
 "mood.happy" = "Feliz";
 "mood.tired" = "Cansado/a";
-"mood.leaveMeAlone" = "Déjame Solo/a";
+"mood.leaveMeAlone" = "Quiero Atención";
 "mood.inLove" = "Enamorado/a";
 
 // MARK: - Share

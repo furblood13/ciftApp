@@ -9,7 +9,10 @@ import SwiftUI
 import MapKit
 
 struct LocationView: View {
-    @State private var locationManager = LocationManager()
+    // Use shared singleton - DO NOT create new instances!
+    // Creating new instances causes multiple GPS sessions and battery drain
+    private var locationManager: LocationManager { LocationManager.shared }
+    
     @State private var cameraPosition: MapCameraPosition = .automatic
     @State private var showingBothLocations = true
     
@@ -50,11 +53,15 @@ struct LocationView: View {
             }
         }
         .task {
-            locationManager.startTracking()
+            // Fetch fresh high-accuracy location when view appears
+            // GPS will automatically stop after 1-2 updates
+            locationManager.fetchFreshLocation()
             await locationManager.loadPartnerLocation()
         }
         .onDisappear {
-            locationManager.stopTracking()
+            // Stop only foreground GPS, keep background monitoring active
+            // Background significant location changes should continue for the app
+            locationManager.stopForegroundTrackingOnly()
         }
     }
     
@@ -65,7 +72,7 @@ struct LocationView: View {
             Map(position: $cameraPosition) {
                 // My Location
                 if let myLocation = locationManager.userLocation {
-                    Annotation("Ben", coordinate: myLocation) {
+                    Annotation(String(localized: "location.me"), coordinate: myLocation) {
                         myLocationPin
                     }
                 }

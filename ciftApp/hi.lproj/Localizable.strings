@@ -211,6 +211,7 @@
 "location.minutesAgo" = "%d मिनट पहले";
 "location.hoursAgo" = "%d घंटे पहले";
 "location.daysAgo" = "%d दिन पहले";
+"location.me" = "मैं";
 
 // MARK: - Todo
 "todo.title" = "करने की सूची";
@@ -246,7 +247,7 @@
 // MARK: - Moods
 "mood.happy" = "खुश";
 "mood.tired" = "थका हुआ";
-"mood.leaveMeAlone" = "मुझे अकेला छोड़ो";
+"mood.leaveMeAlone" = "ध्यान चाहिए";
 "mood.inLove" = "प्यार में";
 
 // MARK: - Share

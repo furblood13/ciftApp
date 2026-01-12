@@ -214,6 +214,7 @@
 "location.minutesAgo" = "%d min ago";
 "location.hoursAgo" = "%d hours ago";
 "location.daysAgo" = "%d days ago";
+"location.me" = "Me";
 
 // MARK: - Todo
 "todo.title" = "To-Do";
@@ -249,7 +250,7 @@
 // MARK: - Moods
 "mood.happy" = "Happy";
 "mood.tired" = "Tired";
-"mood.leaveMeAlone" = "Leave Me Alone";
+"mood.leaveMeAlone" = "I Want Attention";
 "mood.inLove" = "In Love";
 
 // MARK: - Share

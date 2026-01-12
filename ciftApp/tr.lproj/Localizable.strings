@@ -214,6 +214,7 @@
 "location.minutesAgo" = "%d dk önce";
 "location.hoursAgo" = "%d saat önce";
 "location.daysAgo" = "%d gün önce";
+"location.me" = "Ben";
 
 // MARK: - Todo
 "todo.title" = "Yapılacaklar";
@@ -249,7 +250,7 @@
 // MARK: - Moods
 "mood.happy" = "Mutlu";
 "mood.tired" = "Yorgun";
-"mood.leaveMeAlone" = "Beni Rahat Bırak";
+"mood.leaveMeAlone" = "İlgi İstiyorum";
 "mood.inLove" = "Aşık";
 
 // MARK: - Share
