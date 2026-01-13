@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "पासवर्ड भूल गए?";
 "auth.magicLink" = "मैजिक लिंक से लॉग इन";
 "auth.checkEmail" = "लॉगिन लिंक के लिए अपना ईमेल चेक करें";
+"auth.googleSignIn" = "Google से लॉग इन";
+"auth.appleSignIn" = "Apple से लॉग इन";
+"auth.or" = "या";
 
 // MARK: - Pairing
 "pairing.title" = "पार्टनर से जुड़ें";

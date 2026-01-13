@@ -19,6 +19,8 @@
 		DC22A4582F0D4C9500920B1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */; };
 		DC22A4592F0D4C9500920B1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC22A4572F0D4C9500920B1E /* Launch Screen.storyboard */; };
 		DC22A46E2F0DCEF000920B1E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A46D2F0DCEF000920B1E /* Lottie */; };
+		DC22A4872F15858E00920B1E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A4862F15858E00920B1E /* GoogleSignIn */; };
+		DC22A4892F15858E00920B1E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC22A4882F15858E00920B1E /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC22A4892F15858E00920B1E /* GoogleSignInSwift in Frameworks */,
 				DC22A3082EF8567400920B1E /* PostgREST in Frameworks */,
+				DC22A4872F15858E00920B1E /* GoogleSignIn in Frameworks */,
 				DC22A46E2F0DCEF000920B1E /* Lottie in Frameworks */,
 				DC22A3062EF8567400920B1E /* Functions in Frameworks */,
 				DC22A30E2EF8567400920B1E /* Supabase in Frameworks */,
@@ -194,6 +198,8 @@
 				DC22A30B2EF8567400920B1E /* Storage */,
 				DC22A30D2EF8567400920B1E /* Supabase */,
 				DC22A46D2F0DCEF000920B1E /* Lottie */,
+				DC22A4862F15858E00920B1E /* GoogleSignIn */,
+				DC22A4882F15858E00920B1E /* GoogleSignInSwift */,
 			);
 			productName = ciftApp;
 			productReference = DC22A23C2EF8254B00920B1E /* ciftApp.app */;
@@ -256,6 +262,7 @@
 			packageReferences = (
 				DC22A3022EF8567400920B1E /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				DC22A46C2F0DCEF000920B1E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				DC22A4852F15858E00920B1E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC22A23D2EF8254B00920B1E /* Products */;
@@ -625,6 +632,14 @@
 				version = 4.6.0;
 			};
 		};
+		DC22A4852F15858E00920B1E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -662,6 +677,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC22A46C2F0DCEF000920B1E /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		DC22A4862F15858E00920B1E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A4852F15858E00920B1E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		DC22A4882F15858E00920B1E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC22A4852F15858E00920B1E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

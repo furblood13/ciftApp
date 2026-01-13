@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "Lupa Kata Laluan?";
 "auth.magicLink" = "Log masuk dengan Magic Link";
 "auth.checkEmail" = "Semak emel untuk pautan log masuk";
+"auth.googleSignIn" = "Log masuk dengan Google";
+"auth.appleSignIn" = "Log masuk dengan Apple";
+"auth.or" = "atau";
 
 // MARK: - Pairing
 "pairing.title" = "Sambung dengan Pasangan";

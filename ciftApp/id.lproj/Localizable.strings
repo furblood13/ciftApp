@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "Lupa Kata Sandi?";
 "auth.magicLink" = "Masuk dengan Magic Link";
 "auth.checkEmail" = "Cek email untuk link login";
+"auth.googleSignIn" = "Masuk dengan Google";
+"auth.appleSignIn" = "Masuk dengan Apple";
+"auth.or" = "atau";
 
 // MARK: - Pairing
 "pairing.title" = "Hubungkan dengan Pasangan";

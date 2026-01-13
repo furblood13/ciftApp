@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "Şifremi Unuttum";
 "auth.magicLink" = "Magic Link ile Giriş Yap";
 "auth.checkEmail" = "Giriş linki için e-postanı kontrol et";
+"auth.googleSignIn" = "Google ile Giriş Yap";
+"auth.appleSignIn" = "Apple ile Giriş Yap";
+"auth.or" = "veya";
 
 // MARK: - Pairing
 "pairing.title" = "Partner ile Bağlan";

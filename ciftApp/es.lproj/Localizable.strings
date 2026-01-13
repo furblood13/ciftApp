@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "¿Olvidaste tu contraseña?";
 "auth.magicLink" = "Iniciar con enlace mágico";
 "auth.checkEmail" = "Revisa tu correo para el enlace de acceso";
+"auth.googleSignIn" = "Iniciar con Google";
+"auth.appleSignIn" = "Iniciar con Apple";
+"auth.or" = "o";
 
 // MARK: - Pairing
 "pairing.title" = "Conectar con Pareja";

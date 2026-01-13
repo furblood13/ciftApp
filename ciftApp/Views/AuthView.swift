@@ -189,6 +189,74 @@ struct AuthView: View {
                 .disabled(authManager.isLoading || email.isEmpty || password.isEmpty || (!isLoginMode && name.isEmpty))
                 .padding(.horizontal, 24)
                 
+                // Divider with "or" text
+                HStack {
+                    Rectangle()
+                        .fill(secondaryText.opacity(0.3))
+                        .frame(height: 1)
+                    
+                    Text(String(localized: "auth.or"))
+                        .font(.caption)
+                        .foregroundStyle(secondaryText)
+                        .padding(.horizontal, 8)
+                    
+                    Rectangle()
+                        .fill(secondaryText.opacity(0.3))
+                        .frame(height: 1)
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 8)
+                
+                // Google Sign-In Button
+                Button {
+                    Task {
+                        await authManager.signInWithGoogle()
+                    }
+                } label: {
+                    HStack(spacing: 12) {
+                        // Google "G" icon using SF Symbol
+                        Image(systemName: "g.circle.fill")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundStyle(.red, .white)
+                        
+                        Text(String(localized: "auth.googleSignIn"))
+                            .fontWeight(.medium)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.white)
+                    .foregroundStyle(primaryText)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(secondaryText.opacity(0.3), lineWidth: 1)
+                    )
+                }
+                .disabled(authManager.isLoading)
+                .padding(.horizontal, 24)
+                
+                // Apple Sign-In Button
+                Button {
+                    Task {
+                        await authManager.signInWithApple()
+                    }
+                } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "apple.logo")
+                            .font(.system(size: 18, weight: .semibold))
+                        
+                        Text(String(localized: "auth.appleSignIn"))
+                            .fontWeight(.medium)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.black)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
+                .disabled(authManager.isLoading)
+                .padding(.horizontal, 24)
+                
                 Spacer()
             }
         }

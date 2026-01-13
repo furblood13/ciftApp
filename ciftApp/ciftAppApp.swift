@@ -8,6 +8,7 @@
 import SwiftUI
 import UserNotifications
 import Lottie
+import GoogleSignIn
 
 // MARK: - Deep Link Destination
 enum DeepLinkDestination: Hashable {
@@ -124,6 +125,15 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     ) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         return true
+    }
+    
+    // Handle Google Sign-In URL callback
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
     }
     
     // Handle device token

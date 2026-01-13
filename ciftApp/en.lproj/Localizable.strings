@@ -63,6 +63,9 @@
 "auth.forgotPassword" = "Forgot Password?";
 "auth.magicLink" = "Sign in with Magic Link";
 "auth.checkEmail" = "Check your email for the login link";
+"auth.googleSignIn" = "Sign in with Google";
+"auth.appleSignIn" = "Sign in with Apple";
+"auth.or" = "or";
 
 // MARK: - Pairing
 "pairing.title" = "Connect with Partner";
