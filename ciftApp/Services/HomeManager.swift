@@ -15,6 +15,7 @@ import WidgetKit
 final class HomeManager {
     var isLoading = false
     var errorMessage: String?
+    var isCoupleDeleted = false  // Flag to detect if partner deleted the couple
     
     // User data
     var myProfile: Profile?
@@ -66,6 +67,13 @@ final class HomeManager {
                 .value
             
             print("🔵 [Home] My profile loaded: \(myProfile?.username ?? "no name")")
+            
+            // Check if couple was deleted by partner
+            if myProfile?.coupleId == nil {
+                print("🔴 [Home] Couple was deleted! Navigating to pairing...")
+                isCoupleDeleted = true
+                return
+            }
             
             // Load partner profile if exists
             if let partnerId = myProfile?.partnerId {
@@ -259,6 +267,7 @@ enum MoodType: String, CaseIterable {
     case tired = "Tired"
     case needAttention = "NeedAttention"
     case sad = "Sad"
+    case angry = "Angry"
     
     /// Asset image name for the mascot
     var imageName: String {
@@ -268,6 +277,7 @@ enum MoodType: String, CaseIterable {
         case .tired: return "tired"
         case .needAttention: return "needAttention"
         case .sad: return "sad"
+        case .angry: return "angry"
         }
     }
     
@@ -279,6 +289,7 @@ enum MoodType: String, CaseIterable {
         case .tired: return "😴"
         case .needAttention: return "🥺"
         case .sad: return "😢"
+        case .angry: return "😠"
         }
     }
     
@@ -288,7 +299,8 @@ enum MoodType: String, CaseIterable {
         case .loved: return String(localized: "mood.inLove")
         case .tired: return String(localized: "mood.tired")
         case .needAttention: return String(localized: "mood.leaveMeAlone")
-        case .sad: return String(localized: "mood.happy") // fallback, can add mood.sad
+        case .sad: return String(localized: "mood.sad")
+        case .angry: return String(localized: "mood.angry")
         }
     }
     
@@ -299,6 +311,7 @@ enum MoodType: String, CaseIterable {
         case .tired: return "gray"
         case .needAttention: return "orange"
         case .sad: return "blue"
+        case .angry: return "red"
         }
     }
 }

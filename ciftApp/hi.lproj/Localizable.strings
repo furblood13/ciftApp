@@ -56,6 +56,7 @@
 "auth.subtitle" = "रिलेशनशिप OS";
 "auth.email" = "ईमेल";
 "auth.password" = "पासवर्ड";
+"auth.confirmPassword" = "पासवर्ड की पुष्टि";
 "auth.login" = "लॉग इन";
 "auth.signup" = "साइन अप";
 "auth.noAccount" = "अकाउंट नहीं है?";
@@ -65,6 +66,8 @@
 "auth.checkEmail" = "लॉगिन लिंक के लिए अपना ईमेल चेक करें";
 "auth.googleSignIn" = "Google से लॉग इन";
 "auth.appleSignIn" = "Apple से लॉग इन";
+"auth.googleSignUp" = "Google से साइन अप";
+"auth.appleSignUp" = "Apple से साइन अप";
 "auth.or" = "या";
 
 // MARK: - Pairing
@@ -239,6 +242,8 @@
 "profile.username" = "यूजरनेम";
 "profile.email" = "ईमेल";
 "profile.logout" = "लॉग आउट";
+"profile.deleteCouple" = "कमरा स्थायी रूप से हटाएं";
+"profile.deleteCoupleConfirm" = "यह क्रिया वापस नहीं की जा सकती! आपकी सभी यादें, टाइम कैप्सूल, कार्य और अन्य डेटा हटा दिए जाएंगे। क्या आप सुनिश्चित हैं?";
 "profile.deleteAccount" = "अकाउंट डिलीट करें";
 "profile.startDate" = "रिलेशनशिप शुरू होने की तारीख";
 
@@ -252,6 +257,8 @@
 "mood.tired" = "थका हुआ";
 "mood.leaveMeAlone" = "ध्यान चाहिए";
 "mood.inLove" = "प्यार में";
+"mood.sad" = "उदास";
+"mood.angry" = "गुस्सा";
 
 // MARK: - Share
 "share.title" = "शेयर";
@@ -263,6 +270,7 @@
 "error.network" = "नेटवर्क एरर। कृपया फिर से प्रयास करें।";
 "error.unknown" = "कुछ गलत हो गया।";
 "error.invalidInput" = "कृपया अपना इनपुट जांचें।";
+"error.passwordMismatch" = "पासवर्ड मेल नहीं खाते।";
 "error.notFound" = "नहीं मिला";
 "error.unauthorized" = "कृपया फिर से लॉग इन करें।";
 

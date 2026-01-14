@@ -56,6 +56,7 @@
 "auth.subtitle" = "Relationship OS";
 "auth.email" = "Emel";
 "auth.password" = "Kata Laluan";
+"auth.confirmPassword" = "Sahkan Kata Laluan";
 "auth.login" = "Log Masuk";
 "auth.signup" = "Daftar";
 "auth.noAccount" = "Tiada akaun?";
@@ -65,6 +66,8 @@
 "auth.checkEmail" = "Semak emel untuk pautan log masuk";
 "auth.googleSignIn" = "Log masuk dengan Google";
 "auth.appleSignIn" = "Log masuk dengan Apple";
+"auth.googleSignUp" = "Daftar dengan Google";
+"auth.appleSignUp" = "Daftar dengan Apple";
 "auth.or" = "atau";
 
 // MARK: - Pairing
@@ -239,6 +242,8 @@
 "profile.username" = "Nama Pengguna";
 "profile.email" = "Emel";
 "profile.logout" = "Log Keluar";
+"profile.deleteCouple" = "Padam Bilik Secara Kekal";
+"profile.deleteCoupleConfirm" = "Tindakan ini tidak boleh dibatalkan! Semua kenangan, kapsul masa, tugasan dan data lain akan dipadam. Adakah anda pasti?";
 "profile.deleteAccount" = "Padam Akaun";
 "profile.startDate" = "Tarikh Mula Hubungan";
 
@@ -252,6 +257,8 @@
 "mood.tired" = "Penat";
 "mood.leaveMeAlone" = "Mahu Perhatian";
 "mood.inLove" = "Jatuh Cinta";
+"mood.sad" = "Sedih";
+"mood.angry" = "Marah";
 
 // MARK: - Share
 "share.title" = "Kongsi";
@@ -263,6 +270,7 @@
 "error.network" = "Ralat rangkaian. Sila cuba lagi.";
 "error.unknown" = "Sesuatu tidak kena.";
 "error.invalidInput" = "Sila semak input anda.";
+"error.passwordMismatch" = "Kata laluan tidak sepadan.";
 "error.notFound" = "Tidak dijumpai";
 "error.unauthorized" = "Sila log masuk semula.";
 

@@ -99,7 +99,7 @@ struct TimeCapsuleListView: View {
         VStack(spacing: 20) {
             Spacer()
             
-            Image("capsule")
+            Image("capsulenobg")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)

@@ -246,7 +246,7 @@ struct CapsuleDetailView: View {
             }
             
             // Main capsule image
-            Image("capsule")
+            Image("capsulenobg")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)

@@ -56,6 +56,7 @@
 "auth.subtitle" = "Relationship OS";
 "auth.email" = "Email";
 "auth.password" = "Kata Sandi";
+"auth.confirmPassword" = "Konfirmasi Kata Sandi";
 "auth.login" = "Masuk";
 "auth.signup" = "Daftar";
 "auth.noAccount" = "Belum punya akun?";
@@ -65,6 +66,8 @@
 "auth.checkEmail" = "Cek email untuk link login";
 "auth.googleSignIn" = "Masuk dengan Google";
 "auth.appleSignIn" = "Masuk dengan Apple";
+"auth.googleSignUp" = "Daftar dengan Google";
+"auth.appleSignUp" = "Daftar dengan Apple";
 "auth.or" = "atau";
 
 // MARK: - Pairing
@@ -239,6 +242,8 @@
 "profile.username" = "Username";
 "profile.email" = "Email";
 "profile.logout" = "Keluar";
+"profile.deleteCouple" = "Hapus Ruangan Secara Permanen";
+"profile.deleteCoupleConfirm" = "Tindakan ini tidak dapat dibatalkan! Semua kenangan, kapsul waktu, tugas, dan data lainnya akan dihapus. Apakah Anda yakin?";
 "profile.deleteAccount" = "Hapus Akun";
 "profile.startDate" = "Tanggal Mulai Hubungan";
 
@@ -252,6 +257,8 @@
 "mood.tired" = "Lelah";
 "mood.leaveMeAlone" = "Butuh Perhatian";
 "mood.inLove" = "Jatuh Cinta";
+"mood.sad" = "Sedih";
+"mood.angry" = "Marah";
 
 // MARK: - Share
 "share.title" = "Bagikan";
@@ -263,6 +270,7 @@
 "error.network" = "Error jaringan. Silakan coba lagi.";
 "error.unknown" = "Terjadi kesalahan.";
 "error.invalidInput" = "Silakan periksa input Anda.";
+"error.passwordMismatch" = "Kata sandi tidak cocok.";
 "error.notFound" = "Tidak ditemukan";
 "error.unauthorized" = "Silakan login lagi.";
 

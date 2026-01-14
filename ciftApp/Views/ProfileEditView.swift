@@ -10,11 +10,15 @@ import SwiftUI
 struct ProfileEditView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var profileManager: ProfileManager
+    @Bindable var pairingManager: CouplePairingManager
     var onSignOut: (() async -> Void)?
+    var onDeleteCouple: (() -> Void)?
     
     @State private var username: String = ""
     @State private var isSaving = false
     @State private var showSignOutAlert = false
+    @State private var showDeleteCoupleAlert = false
+    @State private var isDeleting = false
     
     // Theme Colors
     private let primaryText = Color(red: 0.3, green: 0.2, blue: 0.25)
@@ -89,6 +93,28 @@ struct ProfileEditView: View {
                     
                     Spacer()
                     
+                    // Delete Couple Button
+                    Button {
+                        showDeleteCoupleAlert = true
+                    } label: {
+                        HStack {
+                            if isDeleting {
+                                ProgressView()
+                                    .tint(.red)
+                            } else {
+                                Image(systemName: "trash.fill")
+                                Text(String(localized: "profile.deleteCouple"))
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.red.opacity(0.1))
+                        .foregroundStyle(.red)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
+                    .disabled(isDeleting)
+                    .padding(.horizontal, 24)
+                    
                     // Sign Out Button
                     Button {
                         showSignOutAlert = true
@@ -147,6 +173,22 @@ struct ProfileEditView: View {
             } message: {
                 Text(String(localized: "profile.logoutConfirm"))
             }
+            .alert(String(localized: "profile.deleteCouple"), isPresented: $showDeleteCoupleAlert) {
+                Button(String(localized: "common.cancel"), role: .cancel) { }
+                Button(String(localized: "common.delete"), role: .destructive) {
+                    Task {
+                        isDeleting = true
+                        let success = await pairingManager.deleteCouple()
+                        isDeleting = false
+                        if success {
+                            dismiss()
+                            onDeleteCouple?()
+                        }
+                    }
+                }
+            } message: {
+                Text(String(localized: "profile.deleteCoupleConfirm"))
+            }
             .onAppear {
                 username = profileManager.profile?.username ?? ""
             }
@@ -166,6 +208,5 @@ struct ProfileEditView: View {
 }
 
 #Preview {
-    ProfileEditView(profileManager: ProfileManager())
+    ProfileEditView(profileManager: ProfileManager(), pairingManager: CouplePairingManager())
 }
-

@@ -43,7 +43,7 @@ struct ciftAppApp: App {
                                 }
                             }
                     } else if pairingManager.isPaired {
-                        HomeView(authManager: authManager, navigateToTimeCapsule: $navigateToTimeCapsule)
+                        HomeView(authManager: authManager, pairingManager: pairingManager, navigateToTimeCapsule: $navigateToTimeCapsule)
                             .task {
                                 // Request push notification permission
                                 await PushNotificationManager.shared.requestPermission()
@@ -51,8 +51,21 @@ struct ciftAppApp: App {
                     } else {
                         PairingView(authManager: authManager, pairingManager: pairingManager)
                             .task {
-                                // We removed checkPairingStatus here to prevent loop
-                                await pairingManager.startListeningForPairing()
+                                // Only start listening if user has a pending code
+                                // This prevents unnecessary polling before code generation
+                                if pairingManager.generatedCode != nil {
+                                    await pairingManager.startListeningForPairing()
+                                }
+                            }
+                            .onChange(of: pairingManager.generatedCode) { _, newCode in
+                                // Start listening when a code is generated
+                                if newCode != nil {
+                                    Task {
+                                        await pairingManager.startListeningForPairing()
+                                    }
+                                } else {
+                                    pairingManager.stopListening()
+                                }
                             }
                     }
                 } else {

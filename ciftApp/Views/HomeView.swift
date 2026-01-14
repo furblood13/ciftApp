@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Bindable var authManager: AuthManager
+    @Bindable var pairingManager: CouplePairingManager
     var navigateToTimeCapsule: Binding<Bool>? = nil
     @State private var homeManager = HomeManager()
     @State private var profileManager = ProfileManager()
@@ -63,8 +64,20 @@ struct HomeView: View {
             }
         }
         .sheet(isPresented: $showProfileEdit) {
-            ProfileEditView(profileManager: profileManager) {
+            ProfileEditView(profileManager: profileManager, pairingManager: pairingManager) {
                 await authManager.signOut()
+            } onDeleteCouple: {
+                // Reset pairing state - this will navigate to PairingView
+                pairingManager.isPaired = false
+                pairingManager.initialCheckDone = false
+            }
+        }
+        .onChange(of: showProfileEdit) { oldValue, newValue in
+            // Refresh home data after profile edit sheet closes
+            if oldValue == true && newValue == false {
+                Task {
+                    await homeManager.loadData()
+                }
             }
         }
         .sheet(isPresented: $showMoodPicker) {
@@ -79,6 +92,13 @@ struct HomeView: View {
             await todoManager.fetchTodos()
             homeManager.updateWidget()
             homeManager.startAutoRefresh()
+        }
+        .onChange(of: homeManager.isCoupleDeleted) { _, isDeleted in
+            // Partner deleted the couple - navigate back to pairing
+            if isDeleted {
+                pairingManager.isPaired = false
+                pairingManager.initialCheckDone = false
+            }
         }
         .onDisappear {
             homeManager.stopAutoRefresh()
@@ -235,42 +255,44 @@ struct HomeView: View {
                 .font(.headline)
                 .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
             
-            HStack(spacing: 8) {
-                ForEach(MoodType.allCases, id: \.self) { mood in
-                    Button {
-                        Task {
-                            await homeManager.updateMyMood(mood)
-                            homeManager.updateWidget()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(MoodType.allCases, id: \.self) { mood in
+                        Button {
+                            Task {
+                                await homeManager.updateMyMood(mood)
+                                homeManager.updateWidget()
+                            }
+                        } label: {
+                            VStack(spacing: 6) {
+                                Image(mood.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 44, height: 44)
+                                Text(mood.label)
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
+                                    .lineLimit(1)
+                            }
+                            .frame(width: 75)
+                            .padding(.vertical, 10)
+                            .background(
+                                homeManager.myMood == mood
+                                    ? Color(red: 0.96, green: 0.69, blue: 0.69).opacity(0.4)
+                                    : .white.opacity(0.7)
+                            )
+                            .clipShape(RoundedRectangle(cornerRadius: 14))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 14)
+                                    .stroke(
+                                        homeManager.myMood == mood 
+                                            ? Color(red: 0.96, green: 0.69, blue: 0.69) 
+                                            : .clear,
+                                        lineWidth: 2
+                                    )
+                            )
                         }
-                    } label: {
-                        VStack(spacing: 4) {
-                            Image(mood.imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 36, height: 36)
-                            Text(mood.label)
-                                .font(.caption2)
-                                .foregroundStyle(Color(red: 0.5, green: 0.4, blue: 0.45))
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.8)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background(
-                            homeManager.myMood == mood
-                                ? Color(red: 0.96, green: 0.69, blue: 0.69).opacity(0.4) // F5AFAF
-                                : .white.opacity(0.7)
-                        )
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(
-                                    homeManager.myMood == mood 
-                                        ? Color(red: 0.96, green: 0.69, blue: 0.69) 
-                                        : .clear,
-                                    lineWidth: 2
-                                )
-                        )
                     }
                 }
             }
@@ -552,6 +574,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(authManager: AuthManager())
+    HomeView(authManager: AuthManager(), pairingManager: CouplePairingManager())
 }
-

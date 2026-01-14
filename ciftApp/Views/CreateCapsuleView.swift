@@ -44,7 +44,7 @@ struct CreateCapsuleView: View {
                 ScrollView {
                     VStack(spacing: 24) {
                         // Header Image
-                        Image("capsule")
+                        Image("capsulenobg")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)

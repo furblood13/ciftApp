@@ -276,6 +276,52 @@ final class CouplePairingManager {
         }
     }
     
+    // MARK: - Delete Couple Permanently
+    @MainActor
+    func deleteCouple() async -> Bool {
+        isLoading = true
+        errorMessage = nil
+        defer { isLoading = false }
+        
+        do {
+            let userId = try await supabase.auth.session.user.id
+            print("🔵 [Delete] Deleting couple for user: \(userId)")
+            
+            // Call the delete_couple database function
+            let response: DeleteCoupleResponse = try await supabase
+                .rpc("delete_couple", params: ["p_user_id": userId.uuidString])
+                .execute()
+                .value
+            
+            if response.success {
+                print("🟢 [Delete] Couple deleted successfully")
+                // Reset local state
+                isPaired = false
+                generatedCode = nil
+                partnerName = nil
+                initialCheckDone = false
+                return true
+            } else if response.error == "Not in a couple" {
+                // Partner already deleted the couple - treat as success
+                print("🟡 [Delete] Already not in a couple, navigating to pairing...")
+                isPaired = false
+                generatedCode = nil
+                partnerName = nil
+                initialCheckDone = false
+                return true
+            } else {
+                print("🔴 [Delete] Error: \(response.error ?? "Unknown")")
+                errorMessage = response.error ?? "Silme işlemi başarısız"
+                return false
+            }
+            
+        } catch {
+            print("🔴 [Delete] Error: \(error)")
+            errorMessage = "Silme hatası: \(error.localizedDescription)"
+            return false
+        }
+    }
+    
     // MARK: - Stop Listening
     func stopListening() {
         listeningTask?.cancel()
@@ -287,6 +333,12 @@ final class CouplePairingManager {
         let letters = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
         return String((0..<6).map { _ in letters.randomElement()! })
     }
+}
+
+// MARK: - Delete Response Model
+private struct DeleteCoupleResponse: Codable {
+    let success: Bool
+    let error: String?
 }
 
 // MARK: - Helper Model

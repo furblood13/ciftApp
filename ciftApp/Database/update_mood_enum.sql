@@ -1,17 +1,10 @@
 -- =====================================================
--- Update mood_type enum to support new moods
--- IMPORTANT: Run each ALTER TYPE statement SEPARATELY!
--- (Click "Run" after each one before running the next)
+-- Add Angry to mood_type enum
+-- Run this in Supabase SQL Editor
 -- =====================================================
 
--- Step 1: Run this ALONE first
-ALTER TYPE mood_type ADD VALUE IF NOT EXISTS 'Loved';
+-- Add 'Angry' to mood_type enum
+ALTER TYPE mood_type ADD VALUE IF NOT EXISTS 'Angry';
 
--- Step 2: Run this ALONE second  
-ALTER TYPE mood_type ADD VALUE IF NOT EXISTS 'NeedAttention';
-
--- Step 3: Run this ALONE third
-ALTER TYPE mood_type ADD VALUE IF NOT EXISTS 'Sad';
-
--- Step 4: Verify (run after all above are done)
+-- Verify the enum values
 SELECT enum_range(NULL::mood_type);

@@ -56,6 +56,7 @@
 "auth.subtitle" = "Relationship OS";
 "auth.email" = "Email";
 "auth.password" = "Password";
+"auth.confirmPassword" = "Confirm Password";
 "auth.login" = "Sign In";
 "auth.signup" = "Sign Up";
 "auth.noAccount" = "Don't have an account?";
@@ -65,6 +66,8 @@
 "auth.checkEmail" = "Check your email for the login link";
 "auth.googleSignIn" = "Sign in with Google";
 "auth.appleSignIn" = "Sign in with Apple";
+"auth.googleSignUp" = "Sign up with Google";
+"auth.appleSignUp" = "Sign up with Apple";
 "auth.or" = "or";
 
 // MARK: - Pairing
@@ -242,6 +245,8 @@
 "profile.username" = "Username";
 "profile.email" = "Email";
 "profile.logout" = "Log Out";
+"profile.deleteCouple" = "Delete Room Permanently";
+"profile.deleteCoupleConfirm" = "This action cannot be undone! All your memories, time capsules, tasks and other data will be deleted. Are you sure?";
 "profile.deleteAccount" = "Delete Account";
 "profile.startDate" = "Relationship Start Date";
 
@@ -255,6 +260,8 @@
 "mood.tired" = "Tired";
 "mood.leaveMeAlone" = "I Want Attention";
 "mood.inLove" = "In Love";
+"mood.sad" = "Sad";
+"mood.angry" = "Angry";
 
 // MARK: - Share
 "share.title" = "Share";
@@ -266,6 +273,7 @@
 "error.network" = "Network error. Please try again.";
 "error.unknown" = "Something went wrong.";
 "error.invalidInput" = "Please check your input.";
+"error.passwordMismatch" = "Passwords do not match.";
 "error.notFound" = "Not found";
 "error.unauthorized" = "Please log in again.";
 

@@ -130,6 +130,26 @@ struct PairingView: View {
                 // Code Entry
                 if showCodeEntry {
                     VStack(spacing: 16) {
+                        // Header with back button
+                        HStack {
+                            Button {
+                                withAnimation {
+                                    showCodeEntry = false
+                                    partnerCode = ""
+                                    pairingManager.errorMessage = nil
+                                }
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Image(systemName: "chevron.left")
+                                    Text(String(localized: "common.back"))
+                                }
+                                .font(.subheadline)
+                                .foregroundStyle(secondaryText)
+                            }
+                            
+                            Spacer()
+                        }
+                        
                         Text(String(localized: "pairing.enterCode"))
                             .font(.subheadline)
                             .foregroundStyle(secondaryText)

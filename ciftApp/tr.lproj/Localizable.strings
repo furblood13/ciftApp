@@ -56,6 +56,7 @@
 "auth.subtitle" = "İlişki İşletim Sistemi";
 "auth.email" = "E-posta";
 "auth.password" = "Şifre";
+"auth.confirmPassword" = "Şifre Tekrar";
 "auth.login" = "Giriş Yap";
 "auth.signup" = "Kayıt Ol";
 "auth.noAccount" = "Hesabın yok mu?";
@@ -65,6 +66,8 @@
 "auth.checkEmail" = "Giriş linki için e-postanı kontrol et";
 "auth.googleSignIn" = "Google ile Giriş Yap";
 "auth.appleSignIn" = "Apple ile Giriş Yap";
+"auth.googleSignUp" = "Google ile Kayıt Ol";
+"auth.appleSignUp" = "Apple ile Kayıt Ol";
 "auth.or" = "veya";
 
 // MARK: - Pairing
@@ -242,6 +245,8 @@
 "profile.username" = "Kullanıcı Adı";
 "profile.email" = "E-posta";
 "profile.logout" = "Çıkış Yap";
+"profile.deleteCouple" = "Odayı Kalıcı Olarak Sil";
+"profile.deleteCoupleConfirm" = "Bu işlem geri alınamaz! Tüm anılarınız, zaman kapsülleri, görevler ve diğer verileriniz silinecek. Emin misiniz?";
 "profile.deleteAccount" = "Hesabı Sil";
 "profile.startDate" = "İlişki Başlangıç Tarihi";
 
@@ -255,6 +260,8 @@
 "mood.tired" = "Yorgun";
 "mood.leaveMeAlone" = "İlgi İstiyorum";
 "mood.inLove" = "Aşık";
+"mood.sad" = "Üzgün";
+"mood.angry" = "Kızgın";
 
 // MARK: - Share
 "share.title" = "Paylaş";
@@ -266,6 +273,7 @@
 "error.network" = "Ağ hatası. Lütfen tekrar deneyin.";
 "error.unknown" = "Bir şeyler yanlış gitti.";
 "error.invalidInput" = "Lütfen girdinizi kontrol edin.";
+"error.passwordMismatch" = "Şifreler eşleşmiyor.";
 "error.notFound" = "Bulunamadı";
 "error.unauthorized" = "Lütfen tekrar giriş yapın.";
 
