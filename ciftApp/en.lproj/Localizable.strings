@@ -103,8 +103,8 @@
 "addEvent.memory.subtitle" = "A beautiful moment";
 "addEvent.conflict" = "Conflict";
 "addEvent.conflict.subtitle" = "A disagreement";
-"addEvent.milestone" = "Milestone";
-"addEvent.milestone.subtitle" = "A special achievement";
+"addEvent.milestone" = "Special Day";
+"addEvent.milestone.subtitle" = "A special day for your couple";
 "addEvent.eventTitle" = "Title";
 "addEvent.eventTitle.placeholder" = "What happened?";
 "addEvent.description" = "Description";
@@ -344,3 +344,39 @@
 "timeline.filter.conflict" = "Conflicts";
 "location.title" = "Location";
 "home.yourMood" = "Your Mood";
+
+// MARK: - Paywall
+"paywall.title" = "Go Premium";
+"paywall.subtitle" = "Unlimited access to all features that strengthen your relationship";
+"paywall.photos" = "Photos";
+"paywall.capsules" = "Capsules";
+"paywall.todos" = "Lists";
+"paywall.yearly" = "Yearly";
+"paywall.monthly" = "Monthly";
+"paywall.trialThenYearly" = "7 days free, then yearly";
+"paywall.trialThenMonthly" = "7 days free, then monthly";
+"paywall.bestValue" = "Best Value";
+"paywall.startTrial" = "Start 7-Day Free Trial";
+"paywall.terms" = "Subscription starts after 7-day trial. Cancel anytime.";
+"paywall.restore" = "Restore purchases";
+"paywall.onePersonPays" = "Only one person needs to pay!";
+
+// MARK: - Timeline Tips
+"timeline.conflictTip" = "Resolved a conflict? Tap on it to mark as 'Resolved'.";
+
+// MARK: - Severity Levels
+"severity.low" = "Low";
+"severity.medium" = "Medium";
+"severity.high" = "High";
+
+// MARK: - Conflict Resolution
+"eventDetail.unresolved" = "Not Resolved Yet";
+"eventDetail.resolvedDesc" = "You learned something from this!";
+"eventDetail.unresolvedDesc" = "Tap to resolve this conflict";
+
+// MARK: - Location Distance
+"location.distanceApart" = "Distance apart:";
+
+// MARK: - Profile Premium
+"profile.goPremium" = "Go Premium";
+"profile.premiumSubtitle" = "Unlock unlimited features";

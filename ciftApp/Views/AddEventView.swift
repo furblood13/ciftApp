@@ -40,12 +40,15 @@ struct AddEventView: View {
     @Bindable var timelineManager: TimelineManager
     @Environment(\.dismiss) private var dismiss
     
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
+    
     // Form States
     @State private var selectedType: AddEventType = .memory
     @State private var title = ""
     @State private var description = ""
     @State private var date = Date()
     @State private var locationName = ""
+    @State private var showPaywall = false
     
     // Photo Picker (Multi-Select for Memory)
     @State private var selectedItems: [PhotosPickerItem] = []
@@ -61,6 +64,22 @@ struct AddEventView: View {
     
     // Loading State
     @State private var isSaving = false
+    
+    // Photo limit calculations
+    private var existingPhotoCount: Int {
+        // Only count photoUrls (the array), not photo_url
+        timelineManager.events.reduce(0) { $0 + ($1.photoUrls?.count ?? 0) }
+    }
+    
+    private var remainingPhotoSlots: Int {
+        if subscriptionManager.isPremium { return 3 }
+        let remaining = subscriptionManager.photoLimit - existingPhotoCount
+        return max(0, min(3, remaining))
+    }
+    
+    private var maxPhotosAllowed: Int {
+        remainingPhotoSlots
+    }
     
     var body: some View {
         NavigationStack {
@@ -237,51 +256,42 @@ struct AddEventView: View {
     
     private var photoPickerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(String(localized: "addEvent.photos"))
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .padding(.leading, 4)
+            HStack {
+                Text(String(localized: "addEvent.photos"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                
+                if !subscriptionManager.isPremium {
+                    Text("(\(existingPhotoCount)/\(subscriptionManager.photoLimit) kullanıldı)")
+                        .font(.caption2)
+                        .foregroundStyle(existingPhotoCount >= subscriptionManager.photoLimit ? .red : .orange)
+                }
+            }
+            .padding(.leading, 4)
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 10) {
-                    // Picker Button
-                    if selectedImagesData.count < 3 {
-                        PhotosPicker(
-                            selection: $selectedItems,
-                            maxSelectionCount: 3,
-                            matching: .images
-                        ) {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.gray.opacity(0.1))
-                                .frame(width: 100, height: 100)
-                                .overlay(
-                                    Image(systemName: "plus")
-                                        .font(.title)
+            HStack(spacing: 12) {
+                ForEach(0..<maxPhotosAllowed, id: \.self) { index in
+                    photoSlot(at: index)
+                }
+                
+                // Show locked slots if not premium and limit reached
+                if !subscriptionManager.isPremium && maxPhotosAllowed < 3 {
+                    ForEach(maxPhotosAllowed..<3, id: \.self) { _ in
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(Color.gray.opacity(0.1))
+                            .frame(width: 100, height: 100)
+                            .overlay(
+                                VStack(spacing: 4) {
+                                    Image(systemName: "lock.fill")
                                         .foregroundStyle(.gray)
-                                )
-                        }
-                    }
-                    
-                    // Selected Photos
-                    ForEach(Array(selectedImagesData.enumerated()), id: \.offset) { index, data in
-                        if let uiImage = UIImage(data: data) {
-                            ZStack(alignment: .topTrailing) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 100, height: 100)
-                                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                                
-                                Button {
-                                    removePhoto(at: index)
-                                } label: {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .foregroundStyle(.white)
-                                        .background(Circle().fill(.black.opacity(0.5)))
+                                    Text("Premium")
+                                        .font(.caption2)
+                                        .foregroundStyle(.gray)
                                 }
-                                .padding(4)
+                            )
+                            .onTapGesture {
+                                showPaywall = true
                             }
-                        }
                     }
                 }
             }
@@ -289,12 +299,61 @@ struct AddEventView: View {
         .onChange(of: selectedItems) { _, newItems in
             Task {
                 var newData: [Data] = []
-                for item in newItems {
+                // Limit to maxPhotosAllowed
+                for (index, item) in newItems.enumerated() {
+                    if index >= maxPhotosAllowed { break }
                     if let data = try? await item.loadTransferable(type: Data.self) {
                         newData.append(data)
                     }
                 }
                 selectedImagesData = newData
+            }
+        }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
+        }
+    }
+    
+    @ViewBuilder
+    private func photoSlot(at index: Int) -> some View {
+        if index < selectedImagesData.count, let uiImage = UIImage(data: selectedImagesData[index]) {
+            // Show selected photo
+            ZStack(alignment: .topTrailing) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                
+                Button {
+                    removePhoto(at: index)
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.white)
+                        .background(Circle().fill(.black.opacity(0.5)))
+                }
+                .padding(4)
+            }
+        } else {
+            // Show empty picker slot
+            PhotosPicker(
+                selection: $selectedItems,
+                maxSelectionCount: 3,
+                matching: .images
+            ) {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color.gray.opacity(0.1))
+                    .frame(width: 100, height: 100)
+                    .overlay(
+                        VStack(spacing: 4) {
+                            Image(systemName: "plus")
+                                .font(.title2)
+                                .foregroundStyle(.gray)
+                            Text("\(index + 1)")
+                                .font(.caption2)
+                                .foregroundStyle(.gray.opacity(0.6))
+                        }
+                    )
             }
         }
     }

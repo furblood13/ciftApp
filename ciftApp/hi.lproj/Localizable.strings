@@ -103,8 +103,8 @@
 "addEvent.memory.subtitle" = "एक खूबसूरत पल";
 "addEvent.conflict" = "विवाद";
 "addEvent.conflict.subtitle" = "एक असहमति";
-"addEvent.milestone" = "माइलस्टोन";
-"addEvent.milestone.subtitle" = "एक खास उपलब्धि";
+"addEvent.milestone" = "खास दिन";
+"addEvent.milestone.subtitle" = "आपके जोड़े का एक खास दिन";
 "addEvent.eventTitle" = "शीर्षक";
 "addEvent.eventTitle.placeholder" = "क्या हुआ?";
 "addEvent.description" = "विवरण";
@@ -344,3 +344,39 @@
 "timeline.filter.conflict" = "विवाद";
 "location.title" = "स्थान";
 "home.yourMood" = "आपका मूड";
+
+// MARK: - Paywall
+"paywall.title" = "प्रीमियम पाएं";
+"paywall.subtitle" = "आपके रिश्ते को मजबूत करने वाली सभी सुविधाओं तक असीमित पहुंच";
+"paywall.photos" = "फ़ोटो";
+"paywall.capsules" = "कैप्सूल";
+"paywall.todos" = "सूचियां";
+"paywall.yearly" = "वार्षिक";
+"paywall.monthly" = "मासिक";
+"paywall.trialThenYearly" = "7 दिन मुफ्त, फिर वार्षिक";
+"paywall.trialThenMonthly" = "7 दिन मुफ्त, फिर मासिक";
+"paywall.bestValue" = "सर्वोत्तम मूल्य";
+"paywall.startTrial" = "7 दिन मुफ्त आज़माएं";
+"paywall.terms" = "7 दिन के बाद सदस्यता शुरू। कभी भी रद्द करें।";
+"paywall.restore" = "खरीदारी पुनर्स्थापित करें";
+"paywall.onePersonPays" = "केवल एक व्यक्ति को भुगतान करना होगा!";
+
+// MARK: - Timeline Tips
+"timeline.conflictTip" = "विवाद सुलझ गया? 'हल हो गया' के रूप में चिह्नित करने के लिए उस पर टैप करें।";
+
+// MARK: - Severity Levels
+"severity.low" = "कम";
+"severity.medium" = "मध्यम";
+"severity.high" = "उच्च";
+
+// MARK: - Conflict Resolution
+"eventDetail.unresolved" = "अभी तक हल नहीं हुआ";
+"eventDetail.resolvedDesc" = "आपने इससे कुछ सीखा!";
+"eventDetail.unresolvedDesc" = "इस विवाद को हल करने के लिए टैप करें";
+
+// MARK: - Location Distance
+"location.distanceApart" = "आपके बीच की दूरी:";
+
+// MARK: - Profile Premium
+"profile.goPremium" = "प्रीमियम पाएं";
+"profile.premiumSubtitle" = "असीमित सुविधाएं अनलॉक करें";

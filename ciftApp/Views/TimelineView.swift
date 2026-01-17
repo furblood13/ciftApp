@@ -13,8 +13,24 @@ struct TimelineView: View {
     @State private var showStats = false
     @State private var showMilestones = false
     @State private var showGallery = false
+    @State private var showPaywall = false
+    @State private var showConflictTip = true
     @State private var selectedFilter: EventType? = nil
     @State private var selectedEvent: TimelineEvent?
+    
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
+    
+    // Total photo count across all events (only count photoUrls array)
+    private var totalPhotoCount: Int {
+        timelineManager.events.reduce(0) { total, event in
+            total + (event.photoUrls?.count ?? 0)
+        }
+    }
+    
+    // Check if user can add more photos (free: 5 total)
+    private var canAddMorePhotos: Bool {
+        subscriptionManager.isPremium || totalPhotoCount < subscriptionManager.photoLimit
+    }
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -44,6 +60,11 @@ struct TimelineView: View {
                     // 2. Filter Section
                     filterSection
                     
+                    // Conflict Resolution Tip
+                    if showConflictTip && hasUnresolvedConflicts {
+                        conflictTipBanner
+                    }
+                    
                     if timelineManager.isLoading {
                         ProgressView()
                             .padding(.top, 50)
@@ -60,7 +81,7 @@ struct TimelineView: View {
                 await timelineManager.loadEvents()
             }
             
-            // 4. Floating Action Button (FAB)
+            // 4. Floating Action Button (FAB) - always allow adding events
             Button {
                 showAddEvent = true
             } label: {
@@ -78,6 +99,9 @@ struct TimelineView: View {
         }
         .navigationTitle(String(localized: "timeline.title"))
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
+        }
         .sheet(isPresented: $showAddEvent) {
             AddEventView(timelineManager: timelineManager)
         }
@@ -117,6 +141,41 @@ struct TimelineView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 10)
         }
+    }
+    
+    // MARK: - Conflict Tip
+    private var hasUnresolvedConflicts: Bool {
+        timelineManager.events.contains { $0.type == .conflict && $0.isResolved != true }
+    }
+    
+    private var conflictTipBanner: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "lightbulb.fill")
+                .foregroundStyle(.orange)
+            
+            Text(String(localized: "timeline.conflictTip"))
+                .font(.caption)
+                .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
+            
+            Spacer()
+            
+            Button {
+                withAnimation {
+                    showConflictTip = false
+                }
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+            }
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(Color.orange.opacity(0.1))
+        )
+        .padding(.horizontal, 20)
+        .padding(.bottom, 8)
     }
     
     // MARK: - Filtered Events

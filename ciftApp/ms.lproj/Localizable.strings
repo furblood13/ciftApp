@@ -103,8 +103,8 @@
 "addEvent.memory.subtitle" = "Momen indah";
 "addEvent.conflict" = "Konflik";
 "addEvent.conflict.subtitle" = "Perselisihan";
-"addEvent.milestone" = "Pencapaian";
-"addEvent.milestone.subtitle" = "Kejayaan istimewa";
+"addEvent.milestone" = "Hari Istimewa";
+"addEvent.milestone.subtitle" = "Hari istimewa untuk pasangan anda";
 "addEvent.eventTitle" = "Tajuk";
 "addEvent.eventTitle.placeholder" = "Apa yang berlaku?";
 "addEvent.description" = "Penerangan";
@@ -344,3 +344,39 @@
 "timeline.filter.conflict" = "Konflik";
 "location.title" = "Lokasi";
 "home.yourMood" = "Mood Anda";
+
+// MARK: - Paywall
+"paywall.title" = "Jadi Premium";
+"paywall.subtitle" = "Akses tanpa had ke semua ciri yang menguatkan hubungan anda";
+"paywall.photos" = "Foto";
+"paywall.capsules" = "Kapsul";
+"paywall.todos" = "Senarai";
+"paywall.yearly" = "Tahunan";
+"paywall.monthly" = "Bulanan";
+"paywall.trialThenYearly" = "7 hari percuma, kemudian tahunan";
+"paywall.trialThenMonthly" = "7 hari percuma, kemudian bulanan";
+"paywall.bestValue" = "Nilai Terbaik";
+"paywall.startTrial" = "Cuba 7 Hari Percuma";
+"paywall.terms" = "Langganan bermula selepas 7 hari. Batalkan bila-bila masa.";
+"paywall.restore" = "Pulihkan pembelian";
+"paywall.onePersonPays" = "Hanya satu orang perlu membayar!";
+
+// MARK: - Timeline Tips
+"timeline.conflictTip" = "Konflik sudah selesai? Ketik untuk tandakan sebagai 'Selesai'.";
+
+// MARK: - Severity Levels
+"severity.low" = "Rendah";
+"severity.medium" = "Sederhana";
+"severity.high" = "Tinggi";
+
+// MARK: - Conflict Resolution
+"eventDetail.unresolved" = "Belum Selesai";
+"eventDetail.resolvedDesc" = "Anda belajar sesuatu daripada ini!";
+"eventDetail.unresolvedDesc" = "Ketik untuk selesaikan konflik ini";
+
+// MARK: - Location Distance
+"location.distanceApart" = "Jarak antara anda:";
+
+// MARK: - Profile Premium
+"profile.goPremium" = "Jadi Premium";
+"profile.premiumSubtitle" = "Buka ciri tanpa had";

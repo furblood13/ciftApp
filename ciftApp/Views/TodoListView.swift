@@ -10,7 +10,15 @@ import SwiftUI
 struct TodoListView: View {
     @Bindable var todoManager: TodoManager
     @State private var showAddSheet = false
+    @State private var showPaywall = false
     @State private var showCompleted = true
+    
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
+    
+    // Check if user can create more todos (free: 5 TOTAL including completed)
+    private var canCreateMoreTodos: Bool {
+        return subscriptionManager.isPremium || todoManager.todos.count < subscriptionManager.todoLimit
+    }
     
     var body: some View {
         ZStack {
@@ -88,7 +96,11 @@ struct TodoListView: View {
                 HStack {
                     Spacer()
                     Button {
-                        showAddSheet = true
+                        if canCreateMoreTodos {
+                            showAddSheet = true
+                        } else {
+                            showPaywall = true
+                        }
                     } label: {
                         Image(systemName: "plus")
                             .font(.title2.bold())
@@ -107,6 +119,9 @@ struct TodoListView: View {
         }
         .navigationTitle(String(localized: "todo.title"))
         .navigationBarTitleDisplayMode(.large)
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
+        }
         .sheet(isPresented: $showAddSheet) {
             AddTodoSheet(todoManager: todoManager)
         }

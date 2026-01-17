@@ -196,89 +196,200 @@ struct EventDetailView: View {
         }
     }
     
-    // MARK: - Conflict Section
+    // MARK: - Conflict Section (Premium Design)
     private func conflictSection(for event: TimelineEvent) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Divider()
-            
-            // Who Started
-            if let starterId = event.whoStarted {
-                HStack {
-                    Text(String(localized: "eventDetail.startedBy"))
-                        .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
-                    
-                    Text(starterId == timelineManager.currentUserId ? String(localized: "addEvent.me") : (timelineManager.partnerName ?? String(localized: "addEvent.partner")))
-                        .fontWeight(.bold)
-                        .foregroundStyle(.orange)
-                }
-            }
-            
-            if let category = event.conflictCategory {
-                HStack {
-                    Image(systemName: category.icon)
-                        .foregroundStyle(.orange)
-                    Text(String(localized: "eventDetail.category") + " " + category.label)
-                        .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
-                }
-            }
-            
+        VStack(spacing: 16) {
+            // Severity Indicator Card
             if let severity = event.severity {
-                HStack {
-                    Image(systemName: "gauge.medium")
-                        .foregroundStyle(.orange)
-                    Text(String(localized: "eventDetail.severity") + " \(severity)/10")
-                        .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
+                HStack(spacing: 16) {
+                    // Severity Circle
+                    ZStack {
+                        Circle()
+                            .stroke(severityColor(severity).opacity(0.3), lineWidth: 8)
+                            .frame(width: 70, height: 70)
+                        
+                        Circle()
+                            .trim(from: 0, to: CGFloat(severity) / 10)
+                            .stroke(severityColor(severity), style: StrokeStyle(lineWidth: 8, lineCap: .round))
+                            .frame(width: 70, height: 70)
+                            .rotationEffect(.degrees(-90))
+                        
+                        VStack(spacing: 0) {
+                            Text("\(severity)")
+                                .font(.title2.bold())
+                                .foregroundStyle(severityColor(severity))
+                            Text("/10")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(String(localized: "eventDetail.severity"))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Text(severityText(severity))
+                            .font(.headline)
+                            .foregroundStyle(severityColor(severity))
+                    }
                     
                     Spacer()
-                    
-                    SeverityBadge(severity: severity)
+                }
+                .padding(16)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(severityColor(severity).opacity(0.08))
+                )
+            }
+            
+            // Info Grid
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                // Category
+                if let category = event.conflictCategory {
+                    infoCard(
+                        icon: category.icon,
+                        title: String(localized: "eventDetail.category"),
+                        value: category.label,
+                        color: .orange
+                    )
+                }
+                
+                // Who Started
+                if let starterId = event.whoStarted {
+                    infoCard(
+                        icon: "person.fill",
+                        title: String(localized: "eventDetail.startedBy"),
+                        value: starterId == timelineManager.currentUserId ? String(localized: "addEvent.me") : (timelineManager.partnerName ?? String(localized: "addEvent.partner")),
+                        color: .purple
+                    )
                 }
             }
             
-            // Resolution Status
-            HStack {
-                Image(systemName: event.isResolved ?? false ? "leaf.fill" : "bolt.fill")
+            // Resolution Status Card
+            HStack(spacing: 12) {
+                Image(systemName: event.isResolved ?? false ? "checkmark.seal.fill" : "exclamationmark.triangle.fill")
+                    .font(.title2)
                     .foregroundStyle(event.isResolved ?? false ? .green : .orange)
-                Text(event.isResolved ?? false ? String(localized: "eventDetail.resolved") : String(localized: "eventDetail.resolved"))
-                    .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
-                    .fontWeight(.medium)
-            }
-            .padding(.top, 4)
-            
-            // Show Lesson Learned if resolved
-            if event.isResolved ?? false, let lesson = event.lessonLearned, !lesson.isEmpty {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(String(localized: "eventDetail.lessonLearned"))
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(event.isResolved ?? false ? String(localized: "eventDetail.resolved") : String(localized: "eventDetail.unresolved"))
+                        .font(.headline)
+                        .foregroundStyle(event.isResolved ?? false ? .green : .orange)
+                    
+                    Text(event.isResolved ?? false ? String(localized: "eventDetail.resolvedDesc") : String(localized: "eventDetail.unresolvedDesc"))
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+                
+                if event.isResolved ?? false {
+                    Image(systemName: "leaf.fill")
+                        .font(.title3)
+                        .foregroundStyle(.green.opacity(0.5))
+                }
+            }
+            .padding(16)
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill((event.isResolved ?? false ? Color.green : Color.orange).opacity(0.1))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke((event.isResolved ?? false ? Color.green : Color.orange).opacity(0.3), lineWidth: 1)
+                    )
+            )
+            
+            // Lesson Learned (if resolved)
+            if event.isResolved ?? false, let lesson = event.lessonLearned, !lesson.isEmpty {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Image(systemName: "lightbulb.fill")
+                            .foregroundStyle(.yellow)
+                        Text(String(localized: "eventDetail.lessonLearned"))
+                            .font(.subheadline.bold())
+                            .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
+                    }
+                    
                     Text(lesson)
                         .font(.body)
-                        .padding(10)
+                        .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
+                        .padding(12)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Color.green.opacity(0.1))
-                        .cornerRadius(8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(.green.opacity(0.08))
+                        )
                 }
-                .padding(.top, 8)
             }
             
-            // Resolution Button (If not resolved)
+            // Resolve Button (if not resolved)
             if !(event.isResolved ?? false) {
                 Button {
                     showResolveSheet = true
                 } label: {
-                    HStack {
+                    HStack(spacing: 10) {
                         Image(systemName: "hand.thumbsup.fill")
                         Text(String(localized: "eventDetail.resolve"))
                     }
                     .font(.headline)
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(12)
+                    .padding(.vertical, 16)
+                    .background(
+                        LinearGradient(
+                            colors: [Color(red: 0.3, green: 0.7, blue: 0.4), Color(red: 0.2, green: 0.6, blue: 0.3)],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .shadow(color: .green.opacity(0.3), radius: 8, y: 4)
                 }
-                .padding(.top, 8)
             }
+        }
+        .padding(.top, 8)
+    }
+    
+    // MARK: - Info Card Helper
+    private func infoCard(icon: String, title: String, value: String, color: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.caption)
+                    .foregroundStyle(color)
+                Text(title)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Text(value)
+                .font(.subheadline.bold())
+                .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(.white)
+                .shadow(color: .black.opacity(0.05), radius: 4, y: 2)
+        )
+    }
+    
+    // MARK: - Severity Helpers
+    private func severityColor(_ severity: Int) -> Color {
+        switch severity {
+        case 1...3: return .green
+        case 4...6: return .orange
+        case 7...10: return .red
+        default: return .gray
+        }
+    }
+    
+    private func severityText(_ severity: Int) -> String {
+        switch severity {
+        case 1...3: return String(localized: "severity.low")
+        case 4...6: return String(localized: "severity.medium")
+        case 7...10: return String(localized: "severity.high")
+        default: return "-"
         }
     }
     

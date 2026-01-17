@@ -129,39 +129,65 @@ struct LocationView: View {
     
     // MARK: - Partner Info Card
     private var partnerInfoCard: some View {
-        HStack(spacing: 16) {
-            // Partner Avatar
-            Image("locationImage")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(locationManager.partnerName ?? "Partner")
-                    .font(.headline)
-                    .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
-                
-                if let timeAgo = locationManager.partnerLocationTimeAgo {
-                    HStack(spacing: 4) {
-                        Image(systemName: "clock")
-                            .font(.caption)
-                        Text(timeAgo)
-                            .font(.caption)
-                    }
-                    .foregroundStyle(Color(red: 0.5, green: 0.4, blue: 0.45))
+        VStack(spacing: 12) {
+            // Distance Display (if available)
+            if let distance = locationManager.formattedDistanceToPartner {
+                HStack(spacing: 8) {
+                    Image(systemName: "heart.fill")
+                        .font(.caption)
+                        .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
+                    
+                    Text(String(localized: "location.distanceApart"))
+                        .font(.caption)
+                        .foregroundStyle(Color(red: 0.5, green: 0.4, blue: 0.45))
+                    
+                    Text(distance)
+                        .font(.headline.bold())
+                        .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(
+                    Capsule()
+                        .fill(Color(red: 0.96, green: 0.69, blue: 0.69).opacity(0.15))
+                )
             }
             
-            Spacer()
-            
-            // Navigate Button
-            if let partnerLocation = locationManager.partnerLocation {
-                Button {
-                    openInMaps(coordinate: partnerLocation)
-                } label: {
-                    Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
-                        .font(.system(size: 36))
-                        .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
+            // Partner Info Row
+            HStack(spacing: 16) {
+                // Partner Avatar
+                Image("locationImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(locationManager.partnerName ?? "Partner")
+                        .font(.headline)
+                        .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
+                    
+                    if let timeAgo = locationManager.partnerLocationTimeAgo {
+                        HStack(spacing: 4) {
+                            Image(systemName: "clock")
+                                .font(.caption)
+                            Text(timeAgo)
+                                .font(.caption)
+                        }
+                        .foregroundStyle(Color(red: 0.5, green: 0.4, blue: 0.45))
+                    }
+                }
+                
+                Spacer()
+                
+                // Navigate Button
+                if let partnerLocation = locationManager.partnerLocation {
+                    Button {
+                        openInMaps(coordinate: partnerLocation)
+                    } label: {
+                        Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
+                            .font(.system(size: 36))
+                            .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
+                    }
                 }
             }
         }

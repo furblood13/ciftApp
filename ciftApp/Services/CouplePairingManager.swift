@@ -123,6 +123,9 @@ final class CouplePairingManager {
             if response.success {
                 print("🟢 [Join] Pairing complete!")
                 isPaired = true
+                
+                // Sync premium status after pairing
+                await syncPremiumAfterPairing(userId: userId)
             } else {
                 switch response.error {
                 case "Already have a partner":
@@ -146,26 +149,42 @@ final class CouplePairingManager {
     @MainActor
     func checkPairingStatus() async {
         isLoading = true
-        defer { 
-            isLoading = false
-            // Note: We deliberately do NOT set initialCheckDone = true here in defer.
-            // We only set it on successful execution.
-        }
+        defer { isLoading = false }
         print("🔵 [Check] Checking pairing status...")
         
         do {
             let userId = try await supabase.auth.session.user.id
             
-            let profile: Profile = try await supabase
+            // Use a simple struct for pairing check - avoids decode issues with new fields
+            struct SimpleProfile: Codable {
+                let id: UUID
+                let partnerId: UUID?
+                let coupleId: UUID?
+                
+                enum CodingKeys: String, CodingKey {
+                    case id
+                    case partnerId = "partner_id"
+                    case coupleId = "couple_id"
+                }
+            }
+            
+            // Fetch only essential fields for pairing check
+            let profiles: [SimpleProfile] = try await supabase
                 .from("profiles")
-                .select()
+                .select("id, partner_id, couple_id")
                 .eq("id", value: userId)
-                .single()
                 .execute()
                 .value
             
+            guard let profile = profiles.first else {
+                print("🔴 [Check] No profile found for user")
+                isPaired = false
+                initialCheckDone = true  // Profile doesn't exist, this is a valid state
+                return
+            }
+            
             isPaired = profile.partnerId != nil
-            print("🔵 [Check] isPaired: \(isPaired)")
+            print("🔵 [Check] isPaired: \(isPaired), partnerId: \(profile.partnerId?.uuidString ?? "nil")")
             
             // Only mark as done if we successfully got a response
             initialCheckDone = true
@@ -191,6 +210,9 @@ final class CouplePairingManager {
             
         } catch {
             print("🔴 [Check] Error: \(error)")
+            // DO NOT set initialCheckDone = true here
+            // This allows the retry loop in ciftAppApp to retry
+            // The error is likely due to session not being ready yet
             isPaired = false
             generatedCode = nil
         }
@@ -375,3 +397,67 @@ private struct PairUsersResponse: Codable {
     }
 }
 
+// MARK: - Premium Sync Extension
+extension CouplePairingManager {
+    /// Syncs premium status to new couple after pairing
+    @MainActor
+    func syncPremiumAfterPairing(userId: UUID) async {
+        do {
+            // Get user's profile
+            let profiles: [Profile] = try await supabase
+                .from("profiles")
+                .select()
+                .eq("id", value: userId)
+                .execute()
+                .value
+            
+            guard let profile = profiles.first,
+                  let coupleId = profile.coupleId else {
+                print("🔴 [Premium] No profile or couple to sync")
+                return
+            }
+            
+            // If user has premium, sync to couple
+            if profile.isPremium == true {
+                print("🔵 [Premium] User has premium, syncing to couple...")
+                
+                try await supabase
+                    .from("couples")
+                    .update(["is_premium": true])
+                    .eq("id", value: coupleId)
+                    .execute()
+                
+                print("🟢 [Premium] Synced premium to new couple")
+            }
+            
+            // Also check partner's premium
+            if let partnerId = profile.partnerId {
+                let partnerProfiles: [Profile] = try await supabase
+                    .from("profiles")
+                    .select()
+                    .eq("id", value: partnerId)
+                    .execute()
+                    .value
+                
+                if let partnerProfile = partnerProfiles.first,
+                   partnerProfile.isPremium == true {
+                    print("🔵 [Premium] Partner has premium, syncing to couple...")
+                    
+                    try await supabase
+                        .from("couples")
+                        .update(["is_premium": true])
+                        .eq("id", value: coupleId)
+                        .execute()
+                    
+                    print("🟢 [Premium] Synced partner premium to couple")
+                }
+            }
+            
+            // Refresh subscription status
+            await SubscriptionManager.shared.checkSubscriptionStatus()
+            
+        } catch {
+            print("🔴 [Premium] Sync error: \(error)")
+        }
+    }
+}

@@ -20,6 +20,11 @@ struct Profile: Codable, Identifiable {
     var createdAt: Date?
     var updatedAt: Date?
     
+    // Premium fields (Source of Truth)
+    var isPremium: Bool?
+    var subscriptionType: String?
+    var subscriptionEndDate: String?  // Changed to String to avoid decode issues
+    
     enum CodingKeys: String, CodingKey {
         case id
         case username
@@ -32,5 +37,8 @@ struct Profile: Codable, Identifiable {
         case lastLocationUpdated = "last_location_updated"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case isPremium = "is_premium"
+        case subscriptionType = "subscription_type"
+        case subscriptionEndDate = "subscription_end_date"
     }
 }

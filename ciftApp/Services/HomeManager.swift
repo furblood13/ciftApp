@@ -218,6 +218,9 @@ final class HomeManager {
         let mMoodImage = myMood.imageName
         let mMoodLabel = myMood.label
         
+        // Distance from LocationManager
+        let distance = LocationManager.shared.distanceToPartner
+        
         let widgetData = WidgetDataPayload(
             daysTogether: daysTogether,
             partnerMoodImage: pMoodImage,
@@ -225,13 +228,14 @@ final class HomeManager {
             partnerName: pName,
             myMoodImage: mMoodImage,
             myMoodLabel: mMoodLabel,
-            lastUpdated: Date().timeIntervalSince1970
+            lastUpdated: Date().timeIntervalSince1970,
+            distanceKm: distance
         )
         
         do {
             let data = try JSONEncoder().encode(widgetData)
             try data.write(to: fileURL)
-            print("💾 [Widget] Saved JSON - Days: \(daysTogether), PartnerMood: \(pMoodImage), MyMood: \(mMoodImage)")
+            print("💾 [Widget] Saved JSON - Days: \(daysTogether), PartnerMood: \(pMoodImage), MyMood: \(mMoodImage), Distance: \(distance ?? -1) km")
             
             // Trigger widget refresh
             WidgetCenter.shared.reloadAllTimelines()
@@ -249,6 +253,7 @@ final class HomeManager {
         let myMoodImage: String
         let myMoodLabel: String
         let lastUpdated: TimeInterval
+        let distanceKm: Double?
     }
 
     

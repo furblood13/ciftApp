@@ -103,8 +103,8 @@
 "addEvent.memory.subtitle" = "Güzel bir anı";
 "addEvent.conflict" = "Tartışma";
 "addEvent.conflict.subtitle" = "Bir anlaşmazlık";
-"addEvent.milestone" = "Dönüm Noktası";
-"addEvent.milestone.subtitle" = "Özel bir başarı";
+"addEvent.milestone" = "Özel Gün";
+"addEvent.milestone.subtitle" = "Çiftinize özel bir gün";
 "addEvent.eventTitle" = "Başlık";
 "addEvent.eventTitle.placeholder" = "Ne oldu?";
 "addEvent.description" = "Açıklama";
@@ -344,3 +344,39 @@
 "timeline.filter.conflict" = "Tartışmalar";
 "location.title" = "Konum";
 "home.yourMood" = "Ruh Halin";
+
+// MARK: - Paywall
+"paywall.title" = "Premium'a Geç";
+"paywall.subtitle" = "İlişkinizi güçlendiren tüm özelliklere sınırsız erişim";
+"paywall.photos" = "Fotoğraflar";
+"paywall.capsules" = "Kapsüller";
+"paywall.todos" = "Listeler";
+"paywall.yearly" = "Yıllık";
+"paywall.monthly" = "Aylık";
+"paywall.trialThenYearly" = "7 gün ücretsiz, sonra yılda bir kez";
+"paywall.trialThenMonthly" = "7 gün ücretsiz, sonra her ay";
+"paywall.bestValue" = "En İyi Fırsat";
+"paywall.startTrial" = "7 Gün Ücretsiz Dene";
+"paywall.terms" = "7 günlük deneme sonrası abonelik başlar. İstediğiniz zaman iptal edin.";
+"paywall.restore" = "Satın alımları geri yükle";
+"paywall.onePersonPays" = "Sadece bir kişinin ödeme yapması yeterli!";
+
+// MARK: - Timeline Tips
+"timeline.conflictTip" = "Tartışmalarınızı çözdüyseniz, üzerine dokunarak 'Çözüldü' olarak işaretleyebilirsiniz.";
+
+// MARK: - Severity Levels
+"severity.low" = "Düşük";
+"severity.medium" = "Orta";
+"severity.high" = "Yüksek";
+
+// MARK: - Conflict Resolution
+"eventDetail.unresolved" = "Henüz Çözülmedi";
+"eventDetail.resolvedDesc" = "Bu tartışmadan bir şeyler öğrendiniz!";
+"eventDetail.unresolvedDesc" = "Bu tartışmayı çözmek için dokunun";
+
+// MARK: - Location Distance
+"location.distanceApart" = "Aranızdaki mesafe:";
+
+// MARK: - Profile Premium
+"profile.goPremium" = "Premium'a Geç";
+"profile.premiumSubtitle" = "Sınırsız özellikler için";

@@ -52,6 +52,7 @@ struct CoupleWidgetData {
     let partnerName: String
     let myMoodImage: String
     let myMoodLabel: String
+    let distanceKm: Double? // Distance between partners in km
     
     static let placeholder = CoupleWidgetData(
         daysTogether: 365,
@@ -59,8 +60,20 @@ struct CoupleWidgetData {
         partnerMoodLabel: "Mutlu",
         partnerName: "Partner",
         myMoodImage: "loved",
-        myMoodLabel: "Aşık"
+        myMoodLabel: "Aşık",
+        distanceKm: 2.5
     )
+    
+    var formattedDistance: String? {
+        guard let distance = distanceKm else { return nil }
+        if distance < 1 {
+            return String(format: "%.0f m", distance * 1000)
+        } else if distance < 10 {
+            return String(format: "%.1f km", distance)
+        } else {
+            return String(format: "%.0f km", distance)
+        }
+    }
     
     static func load() -> CoupleWidgetData {
         print("🔄 [Widget] Loading from File...")
@@ -73,7 +86,8 @@ struct CoupleWidgetData {
                 partnerMoodLabel: "Err:Group",
                 partnerName: "Provisioning",
                 myMoodImage: "sad",
-                myMoodLabel: "Err"
+                myMoodLabel: "Err",
+                distanceKm: nil
             )
         }
         
@@ -92,7 +106,8 @@ struct CoupleWidgetData {
                 partnerMoodLabel: widgetData.partnerMoodLabel,
                 partnerName: widgetData.partnerName,
                 myMoodImage: widgetData.myMoodImage,
-                myMoodLabel: widgetData.myMoodLabel
+                myMoodLabel: widgetData.myMoodLabel,
+                distanceKm: widgetData.distanceKm
             )
         } catch {
             print("🔴 [Widget] Failed to read/decode JSON: \(error)")
@@ -102,7 +117,8 @@ struct CoupleWidgetData {
                 partnerMoodLabel: "NoData",
                 partnerName: "Waiting...",
                 myMoodImage: "tired",
-                myMoodLabel: "NoData"
+                myMoodLabel: "NoData",
+                distanceKm: nil
             )
         }
     }
@@ -115,6 +131,7 @@ struct CoupleWidgetData {
         let myMoodImage: String
         let myMoodLabel: String
         let lastUpdated: TimeInterval
+        let distanceKm: Double?
     }
 }
 
@@ -201,10 +218,20 @@ struct SmallWidgetView: View {
                         .foregroundStyle(Color.widgetTextSecondary)
                 }
                 
-                // Heart
-                Image(systemName: "heart.fill")
-                    .font(.system(size: 10))
-                    .foregroundStyle(Color.widgetAccent)
+                // Heart Center with Optional Distance
+                VStack(spacing: 2) {
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 10))
+                        .foregroundStyle(Color.widgetAccent)
+                    
+                    if let distance = data.formattedDistance {
+                        Text(distance)
+                            .font(.system(size: 8, weight: .medium))
+                            .foregroundStyle(Color.widgetAccentDark)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                }
                 
                 // Partner Mood
                 VStack(spacing: 2) {
@@ -265,10 +292,18 @@ struct MediumWidgetView: View {
                 }
                 .frame(maxWidth: .infinity)
                 
-                // Heart Center
-                Image(systemName: "heart.fill")
-                    .font(.title2)
-                    .foregroundStyle(Color.widgetAccent)
+                // Heart Center with optional distance
+                VStack(spacing: 4) {
+                    Image(systemName: "heart.fill")
+                        .font(.title2)
+                        .foregroundStyle(Color.widgetAccent)
+                    
+                    if let distance = data.formattedDistance {
+                        Text(distance)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundStyle(Color.widgetAccentDark)
+                    }
+                }
                 
                 // Partner Mood
                 VStack(spacing: 6) {

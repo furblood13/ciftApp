@@ -21,7 +21,9 @@ struct ciftAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @State private var authManager = AuthManager()
     @State private var pairingManager = CouplePairingManager()
+    @State private var subscriptionManager = SubscriptionManager.shared
     @State private var navigateToTimeCapsule = false
+    @State private var showPaywall = false
     
     var body: some Scene {
         WindowGroup {
@@ -47,6 +49,15 @@ struct ciftAppApp: App {
                             .task {
                                 // Request push notification permission
                                 await PushNotificationManager.shared.requestPermission()
+                                // Check subscription status
+                                await subscriptionManager.checkSubscriptionStatus()
+                                // Show paywall if not premium
+                                if !subscriptionManager.isPremium {
+                                    showPaywall = true
+                                }
+                            }
+                            .sheet(isPresented: $showPaywall) {
+                                PaywallView(showCloseButton: true)
                             }
                     } else {
                         PairingView(authManager: authManager, pairingManager: pairingManager)

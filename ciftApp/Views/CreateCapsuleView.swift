@@ -11,10 +11,13 @@ struct CreateCapsuleView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var capsuleManager: TimeCapsuleManager
     
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
+    
     @State private var title = ""
     @State private var message = ""
     @State private var unlockDate = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()
     @State private var isCreating = false
+    @State private var showPaywall = false
     
     // Privacy options
     @State private var hideTitle = false
@@ -24,6 +27,12 @@ struct CreateCapsuleView: View {
     // Minimum date: 5 minutes from now
     private var minimumDate: Date {
         Calendar.current.date(byAdding: .minute, value: 5, to: Date()) ?? Date()
+    }
+    
+    // Check if user can create more capsules
+    private var canCreateMoreCapsules: Bool {
+        let pendingCount = capsuleManager.sentCapsules.filter { $0.isLocked }.count
+        return subscriptionManager.isPremium || pendingCount < subscriptionManager.capsuleLimit
     }
     
     var body: some View {
@@ -165,10 +174,22 @@ struct CreateCapsuleView: View {
     // MARK: - Privacy Section
     private var privacySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(String(localized: "capsule.privacy"))
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
+            HStack {
+                Text(String(localized: "capsule.privacy"))
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color(red: 0.3, green: 0.2, blue: 0.25))
+                
+                if !subscriptionManager.canUseCapsulePrivacy {
+                    Text("Premium")
+                        .font(.caption2)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(Capsule().fill(Color.orange))
+                }
+            }
             
             VStack(spacing: 0) {
                 privacyToggle(
@@ -200,6 +221,16 @@ struct CreateCapsuleView: View {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.white)
             )
+            .disabled(!subscriptionManager.canUseCapsulePrivacy)
+            .opacity(subscriptionManager.canUseCapsulePrivacy ? 1 : 0.6)
+            .onTapGesture {
+                if !subscriptionManager.canUseCapsulePrivacy {
+                    showPaywall = true
+                }
+            }
+        }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
         }
     }
     
@@ -252,6 +283,3 @@ struct CreateCapsuleView: View {
     }
 }
 
-#Preview {
-    CreateCapsuleView(capsuleManager: TimeCapsuleManager())
-}

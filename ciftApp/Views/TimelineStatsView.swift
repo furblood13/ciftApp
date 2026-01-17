@@ -169,26 +169,29 @@ struct TimelineStatsView: View {
                     )
                 )
             
-            // Image on right with gradient
-            HStack {
+            // Image on right - fills height with gradient fade
+            HStack(spacing: 0) {
                 Spacer()
-                Image("ani")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 130, height: 130)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .mask(
-                        LinearGradient(
-                            stops: [
-                                .init(color: .white.opacity(0.15), location: 0),
-                                .init(color: .white, location: 0.3),
-                                .init(color: .white, location: 1)
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
+                GeometryReader { geo in
+                    Image("ani")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .clipped()
+                        .mask(
+                            LinearGradient(
+                                stops: [
+                                    .init(color: .clear, location: 0),
+                                    .init(color: .white.opacity(0.4), location: 0.25),
+                                    .init(color: .white, location: 0.5),
+                                    .init(color: .white, location: 1)
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
                         )
-                    )
-                    .padding(.trailing, 8)
+                }
+                .frame(width: 150)
             }
             
             // Text content on left
@@ -361,25 +364,29 @@ struct StatBentoCard: View {
                     )
                 )
             
-            // Image on right with gradient
-            HStack {
+            // Image on right - fills the right half with gradient fade
+            HStack(spacing: 0) {
                 Spacer()
-                Image(assetName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 70, height: 70)
-                    .mask(
-                        LinearGradient(
-                            stops: [
-                                .init(color: .white.opacity(0.15), location: 0),
-                                .init(color: .white, location: 0.35),
-                                .init(color: .white, location: 1)
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
+                GeometryReader { geo in
+                    Image(assetName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .clipped()
+                        .mask(
+                            LinearGradient(
+                                stops: [
+                                    .init(color: .clear, location: 0),
+                                    .init(color: .white.opacity(0.3), location: 0.2),
+                                    .init(color: .white, location: 0.5),
+                                    .init(color: .white, location: 1)
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
                         )
-                    )
-                    .padding(.trailing, 8)
+                }
+                .frame(width: 100)
             }
             
             // Text content on left

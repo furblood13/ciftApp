@@ -18,7 +18,10 @@ struct ProfileEditView: View {
     @State private var isSaving = false
     @State private var showSignOutAlert = false
     @State private var showDeleteCoupleAlert = false
+    @State private var showPaywall = false
     @State private var isDeleting = false
+    
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
     
     // Theme Colors
     private let primaryText = Color(red: 0.3, green: 0.2, blue: 0.25)
@@ -89,6 +92,65 @@ struct ProfileEditView: View {
                             .foregroundStyle(.red)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal)
+                    }
+                    
+                    // Premium Button (if not premium)
+                    if !subscriptionManager.isPremium {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "crown.fill")
+                                    .font(.title2)
+                                    .foregroundStyle(
+                                        LinearGradient(
+                                            colors: [.yellow, .orange],
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(String(localized: "profile.goPremium"))
+                                        .font(.headline)
+                                        .foregroundStyle(primaryText)
+                                    Text(String(localized: "profile.premiumSubtitle"))
+                                        .font(.caption)
+                                        .foregroundStyle(secondaryText)
+                                }
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(secondaryText)
+                            }
+                            .padding(16)
+                            .background(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [
+                                                Color.yellow.opacity(0.1),
+                                                Color.orange.opacity(0.1)
+                                            ],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .stroke(
+                                                LinearGradient(
+                                                    colors: [.yellow.opacity(0.5), .orange.opacity(0.5)],
+                                                    startPoint: .leading,
+                                                    endPoint: .trailing
+                                                ),
+                                                lineWidth: 1
+                                            )
+                                    )
+                            )
+                        }
+                        .padding(.horizontal, 24)
                     }
                     
                     Spacer()
@@ -188,6 +250,9 @@ struct ProfileEditView: View {
                 }
             } message: {
                 Text(String(localized: "profile.deleteCoupleConfirm"))
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
             }
             .onAppear {
                 username = profileManager.profile?.username ?? ""

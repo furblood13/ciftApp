@@ -81,16 +81,43 @@ final class LocationManager: NSObject {
         let interval = Date().timeIntervalSince(updatedAt)
         
         if interval < 60 {
-            return "Az önce"
+            return String(localized: "location.justNow")
         } else if interval < 3600 {
             let minutes = Int(interval / 60)
-            return "\(minutes) dk önce"
+            return String(format: String(localized: "location.minutesAgo"), minutes)
         } else if interval < 86400 {
             let hours = Int(interval / 3600)
-            return "\(hours) saat önce"
+            return String(format: String(localized: "location.hoursAgo"), hours)
         } else {
             let days = Int(interval / 86400)
-            return "\(days) gün önce"
+            return String(format: String(localized: "location.daysAgo"), days)
+        }
+    }
+    
+    /// Distance to partner in kilometers (nil if either location unavailable)
+    var distanceToPartner: Double? {
+        guard let myLocation = userLocation,
+              let partnerLoc = partnerLocation else { return nil }
+        
+        let myCoord = CLLocation(latitude: myLocation.latitude, longitude: myLocation.longitude)
+        let partnerCoord = CLLocation(latitude: partnerLoc.latitude, longitude: partnerLoc.longitude)
+        
+        return myCoord.distance(from: partnerCoord) / 1000.0 // Convert meters to km
+    }
+    
+    /// Formatted distance string (e.g. "2.5 km" or "150 m")
+    var formattedDistanceToPartner: String? {
+        guard let distance = distanceToPartner else { return nil }
+        
+        if distance < 1 {
+            // Less than 1 km, show in meters
+            return String(format: "%.0f m", distance * 1000)
+        } else if distance < 10 {
+            // Show with 1 decimal
+            return String(format: "%.1f km", distance)
+        } else {
+            // Show as integer
+            return String(format: "%.0f km", distance)
         }
     }
     

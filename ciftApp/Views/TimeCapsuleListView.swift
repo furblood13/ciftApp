@@ -10,10 +10,19 @@ import SwiftUI
 struct TimeCapsuleListView: View {
     @State private var capsuleManager = TimeCapsuleManager()
     @State private var showCreateSheet = false
+    @State private var showPaywall = false
+    
+    private var subscriptionManager: SubscriptionManager { SubscriptionManager.shared }
     @State private var selectedCapsule: TimeCapsule?
     @State private var selectedTab = 0 // 0: Gelen, 1: Gönderilen
     @State private var capsuleToDelete: TimeCapsule?
     @State private var showDeleteAlert = false
+    
+    // Check if user can create more capsules (free: 1 pending)
+    private var canCreateMoreCapsules: Bool {
+        let pendingCount = capsuleManager.sentCapsules.filter { $0.isLocked }.count
+        return subscriptionManager.isPremium || pendingCount < subscriptionManager.capsuleLimit
+    }
     
     var body: some View {
         ZStack {
@@ -55,13 +64,20 @@ struct TimeCapsuleListView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    showCreateSheet = true
+                    if canCreateMoreCapsules {
+                        showCreateSheet = true
+                    } else {
+                        showPaywall = true
+                    }
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.title2)
                         .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
                 }
             }
+        }
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
         }
         .sheet(isPresented: $showCreateSheet) {
             CreateCapsuleView(capsuleManager: capsuleManager)
