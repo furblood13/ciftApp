@@ -35,6 +35,7 @@
 "home.together" = "Birlikte";
 "home.days" = "gün";
 "home.yourMood" = "Ruh Halin";
+"home.tip.changeNameFromProfile" = "İsminizi profil kısmından değiştirebilirsiniz.";
 "home.timeline" = "Timeline";
 "home.timeline.subtitle" = "Anılar ve olaylar";
 "home.location" = "Konum";
@@ -246,7 +247,7 @@
 "profile.email" = "E-posta";
 "profile.logout" = "Çıkış Yap";
 "profile.deleteCouple" = "Odayı Kalıcı Olarak Sil";
-"profile.deleteCoupleConfirm" = "Bu işlem geri alınamaz! Tüm anılarınız, zaman kapsülleri, görevler ve diğer verileriniz silinecek. Emin misiniz?";
+"profile.deleteCoupleConfirm" = "Bu işlem geri alınamaz! Tüm anılarınız, zaman kapsülleri, görevler ve diğer verileriniz silinecek.\n\n💎 Premium aboneliğiniz varsa, aboneliğiniz aktif kalacaktır. Yeni bir oda oluşturduğunuzda otomatik olarak Premium olacaktır.";
 "profile.deleteAccount" = "Hesabı Sil";
 "profile.startDate" = "İlişki Başlangıç Tarihi";
 

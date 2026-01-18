@@ -1,4 +1,10 @@
 {
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+
+    ]
+  },
   "identifier" : "3A079946",
   "nonRenewingSubscriptions" : [
 
@@ -7,12 +13,18 @@
 
   ],
   "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_disableDialogs" : false,
     "_failTransactionsEnabled" : false,
     "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "USA",
     "_storeKitErrors" : [
 
-    ]
+    ],
+    "_timeRate" : 0
   },
   "subscriptionGroups" : [
     {
@@ -33,11 +45,7 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "33C9BF39",
-          "introductoryOffer" : {
-            "displayPrice" : "0.99",
-            "internalID" : "D68165C7",
-            "paymentMode" : "none"
-          },
+          "introductoryOffer" : null,
           "localizations" : [
             {
               "description" : "Monthly premium subscription",
@@ -47,14 +55,17 @@
             {
               "description" : "Aylık premium abonelik",
               "displayName" : "Premium Aylık",
-              "locale" : "tr_TR"
+              "locale" : "tr"
             }
           ],
-          "productID" : "usandtime.premium.monthly",
+          "productID" : "usandtime.premium.monthly1",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Monthly",
           "subscriptionGroupID" : "21453267",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         },
         {
           "adHocOffers" : [
@@ -67,11 +78,7 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "55E12A8B",
-          "introductoryOffer" : {
-            "internalID" : "8F45A2B1",
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P1W"
-          },
+          "introductoryOffer" : null,
           "localizations" : [
             {
               "description" : "Yearly premium subscription",
@@ -81,20 +88,23 @@
             {
               "description" : "Yıllık premium abonelik",
               "displayName" : "Premium Yıllık",
-              "locale" : "tr_TR"
+              "locale" : "tr"
             }
           ],
-          "productID" : "usandtime.premium.yearly",
+          "productID" : "usandtime.premium.yearly1",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Yearly",
           "subscriptionGroupID" : "21453267",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
 }

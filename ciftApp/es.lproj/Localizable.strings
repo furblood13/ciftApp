@@ -35,6 +35,7 @@
 "home.together" = "Juntos";
 "home.days" = "días";
 "home.yourMood" = "Tu Estado";
+"home.tip.changeNameFromProfile" = "Puedes cambiar tu nombre desde la sección de perfil.";
 "home.timeline" = "Línea de Tiempo";
 "home.timeline.subtitle" = "Recuerdos y eventos";
 "home.location" = "Ubicación";
@@ -259,7 +260,7 @@
 "profile.email" = "Correo Electrónico";
 "profile.logout" = "Cerrar Sesión";
 "profile.deleteCouple" = "Eliminar Sala Permanentemente";
-"profile.deleteCoupleConfirm" = "¡Esta acción no se puede deshacer! Todos tus recuerdos, cápsulas del tiempo, tareas y otros datos serán eliminados. ¿Estás seguro?";
+"profile.deleteCoupleConfirm" = "¡Esta acción no se puede deshacer! Todos tus recuerdos, cápsulas del tiempo, tareas y otros datos serán eliminados.\n\n💎 Si tienes Premium, tu suscripción permanecerá activa. Cuando crees una nueva sala, será Premium automáticamente.";
 "profile.deleteAccount" = "Eliminar Cuenta";
 "profile.startDate" = "Fecha de Inicio de Relación";
 

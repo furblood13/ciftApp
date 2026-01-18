@@ -50,6 +50,7 @@ final class HomeManager {
     // MARK: - Load All Data
     @MainActor
     func loadData() async {
+        print("🔵 [Home] loadData() called - refreshing...")
         isLoading = true
         defer { isLoading = false }
         
@@ -57,19 +58,19 @@ final class HomeManager {
             let userId = try await supabase.auth.session.user.id
             print("🔵 [Home] Loading data for user: \(userId)")
             
-            // Load my profile
-            myProfile = try await supabase
+            // Load my profile (use array to avoid decode issues)
+            let myProfiles: [Profile] = try await supabase
                 .from("profiles")
                 .select()
                 .eq("id", value: userId)
-                .single()
                 .execute()
                 .value
             
+            myProfile = myProfiles.first
             print("🔵 [Home] My profile loaded: \(myProfile?.username ?? "no name")")
             
             // Check if couple was deleted by partner
-            if myProfile?.coupleId == nil {
+            guard let coupleId = myProfile?.coupleId else {
                 print("🔴 [Home] Couple was deleted! Navigating to pairing...")
                 isCoupleDeleted = true
                 return
@@ -88,18 +89,16 @@ final class HomeManager {
                 print("🔵 [Home] Partner loaded: \(partnerProfile?.username ?? "no name")")
             }
             
-            // Load couple info
-            if let coupleId = myProfile?.coupleId {
-                let couples: [CoupleInfo] = try await supabase
-                    .from("couples")
-                    .select()
-                    .eq("id", value: coupleId)
-                    .execute()
-                    .value
-                
-                couple = couples.first
-                print("🔵 [Home] Couple loaded, start date: \(couple?.startDate ?? "nil")")
-            }
+            // Load couple info - ALWAYS refresh this
+            let couples: [CoupleInfo] = try await supabase
+                .from("couples")
+                .select()
+                .eq("id", value: coupleId)
+                .execute()
+                .value
+            
+            couple = couples.first
+            print("🔵 [Home] Couple loaded, start date: \(couple?.startDate ?? "nil"), daysTogether: \(daysTogether)")
             
             // Sync widget
             updateWidget()

@@ -35,6 +35,7 @@
 "home.together" = "Bersama";
 "home.days" = "hari";
 "home.yourMood" = "Mood Anda";
+"home.tip.changeNameFromProfile" = "Anda boleh menukar nama dari bahagian profil.";
 "home.timeline" = "Timeline";
 "home.timeline.subtitle" = "Kenangan dan peristiwa";
 "home.location" = "Lokasi";
@@ -243,7 +244,7 @@
 "profile.email" = "Emel";
 "profile.logout" = "Log Keluar";
 "profile.deleteCouple" = "Padam Bilik Secara Kekal";
-"profile.deleteCoupleConfirm" = "Tindakan ini tidak boleh dibatalkan! Semua kenangan, kapsul masa, tugasan dan data lain akan dipadam. Adakah anda pasti?";
+"profile.deleteCoupleConfirm" = "Tindakan ini tidak boleh dibatalkan! Semua kenangan, kapsul masa, tugasan dan data lain akan dipadam.\n\n💎 Jika anda mempunyai Premium, langganan anda akan kekal aktif. Apabila anda membuat bilik baru, ia akan menjadi Premium secara automatik.";
 "profile.deleteAccount" = "Padam Akaun";
 "profile.startDate" = "Tarikh Mula Hubungan";
 

@@ -19,6 +19,7 @@ struct HomeView: View {
     @State private var showDateEditor = false
     @State private var showTodoList = false
     @State private var localNavigateToTimeCapsule = false
+    @AppStorage("hasShownProfileNameTip") private var hasShownProfileNameTip = false
     
     var body: some View {
         NavigationStack {
@@ -47,9 +48,13 @@ struct HomeView: View {
                             // Couple Card (Both partners)
                             coupleCard
                             
+                            // One-time tip for changing name
+                            if !hasShownProfileNameTip {
+                                profileNameTipView
+                            }
+                            
                             // Mood Section
                             moodSection
-                            
                             
                             // Quick Actions
                             quickActionsSection
@@ -57,6 +62,14 @@ struct HomeView: View {
                         .padding(.horizontal, 20)
                         .padding(.top, 16)
                         .padding(.bottom, 100)
+                    }
+                    .refreshable {
+                        // Use Task to prevent cancellation when refresh ends
+                        await Task {
+                            await homeManager.loadData()
+                            await profileManager.fetchProfile()
+                            homeManager.updateWidget()
+                        }.value
                     }
                 }
                 
@@ -316,6 +329,38 @@ struct HomeView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white.opacity(0.7))
         )
+    }
+    
+    // MARK: - Profile Name Tip (One-time)
+    private var profileNameTipView: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "person.crop.circle.badge.questionmark")
+                .font(.title2)
+                .foregroundStyle(Color(red: 0.96, green: 0.69, blue: 0.69))
+            
+            Text(String(localized: "home.tip.changeNameFromProfile"))
+                .font(.subheadline)
+                .foregroundStyle(Color(red: 0.4, green: 0.3, blue: 0.35))
+                .multilineTextAlignment(.leading)
+            
+            Spacer()
+            
+            Button {
+                withAnimation(.easeOut(duration: 0.3)) {
+                    hasShownProfileNameTip = true
+                }
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .font(.title3)
+                    .foregroundStyle(Color(red: 0.6, green: 0.5, blue: 0.55))
+            }
+        }
+        .padding(16)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(red: 0.96, green: 0.69, blue: 0.69).opacity(0.2))
+        )
+        .transition(.opacity.combined(with: .scale(scale: 0.95)))
     }
     
     // MARK: - Quick Actions

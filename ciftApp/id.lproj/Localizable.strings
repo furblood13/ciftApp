@@ -35,6 +35,7 @@
 "home.together" = "Bersama";
 "home.days" = "hari";
 "home.yourMood" = "Mood Kamu";
+"home.tip.changeNameFromProfile" = "Anda dapat mengubah nama dari bagian profil.";
 "home.timeline" = "Timeline";
 "home.timeline.subtitle" = "Kenangan dan momen";
 "home.location" = "Lokasi";
@@ -243,7 +244,7 @@
 "profile.email" = "Email";
 "profile.logout" = "Keluar";
 "profile.deleteCouple" = "Hapus Ruangan Secara Permanen";
-"profile.deleteCoupleConfirm" = "Tindakan ini tidak dapat dibatalkan! Semua kenangan, kapsul waktu, tugas, dan data lainnya akan dihapus. Apakah Anda yakin?";
+"profile.deleteCoupleConfirm" = "Tindakan ini tidak dapat dibatalkan! Semua kenangan, kapsul waktu, tugas, dan data lainnya akan dihapus.\n\n💎 Jika Anda memiliki Premium, langganan Anda akan tetap aktif. Saat Anda membuat ruangan baru, secara otomatis akan menjadi Premium.";
 "profile.deleteAccount" = "Hapus Akun";
 "profile.startDate" = "Tanggal Mulai Hubungan";
 

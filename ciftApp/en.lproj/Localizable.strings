@@ -35,6 +35,7 @@
 "home.together" = "Together";
 "home.days" = "days";
 "home.yourMood" = "Your Mood";
+"home.tip.changeNameFromProfile" = "You can change your name from the profile section.";
 "home.timeline" = "Timeline";
 "home.timeline.subtitle" = "Memories and events";
 "home.location" = "Location";
@@ -246,7 +247,7 @@
 "profile.email" = "Email";
 "profile.logout" = "Log Out";
 "profile.deleteCouple" = "Delete Room Permanently";
-"profile.deleteCoupleConfirm" = "This action cannot be undone! All your memories, time capsules, tasks and other data will be deleted. Are you sure?";
+"profile.deleteCoupleConfirm" = "This action cannot be undone! All your memories, time capsules, tasks and other data will be deleted.\n\n💎 If you have Premium, your subscription will remain active. When you create a new room, it will automatically be Premium.";
 "profile.deleteAccount" = "Delete Account";
 "profile.startDate" = "Relationship Start Date";
 
